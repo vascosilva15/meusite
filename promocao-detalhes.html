@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Detalhes da promoção selecionada na FlyScape" />
+  <link rel="icon" type="image/png" href="media/logo.png" />
+  <title>Detalhes da Promoção | FlyScape</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style_global.css" />
+  <link rel="stylesheet" href="css/style_promocao_detalhes.css" />
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="unified-header" role="banner">
+    <a href="index.html" class="header-left-link">
+      <div class="header-left">
+        <img src="media/logo.png" alt="Logótipo da FlyScape" />
+        <span class="site-name">FlyScape | Your escape starts in the sky</span>
+      </div>
+    </a>
+    <nav class="header-right" aria-label="Menu de Utilizador">
+      <a href="sobre.html"><i class="fa-solid fa-info-circle"></i> Sobre Nós</a>
+      <a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a>
+      <a href="perfil.html"><i class="fa-solid fa-user"></i> <span id="user-display-name">Área de Cliente</span></a>
+      <a href="carrinho.html" aria-label="Carrinho"><i class="fa-solid fa-cart-shopping"></i> <span class="carrinho-contador">0</span></a>
+    </nav>
+  </header>
+
+  <nav class="nav-blue" role="navigation" aria-label="Menu Principal">
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+      <li><a href="voos.html"><i class="fa-solid fa-plane"></i> Voos</a></li>
+      <li><a href="hotel.html"><i class="fa-solid fa-hotel"></i> Hotéis</a></li>
+      <li><a href="pacotes.html"><i class="fa-solid fa-gift"></i> Pacotes</a></li>
+      <li><a href="promocoes.html" class="active"><i class="fa-solid fa-tags"></i> Promoções</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="promocao-container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Navegação estrutural">
+        <ol>
+          <li><a href="promocoes.html">Promoções</a></li>
+          <li><span id="promocao-titulo">Detalhes da Promoção</span></li>
+        </ol>
+      </nav>
+
+      <!-- Conteúdo Principal -->
+      <div class="promocao-content">
+        <div class="promocao-header">
+          <div class="promocao-images">
+            <div class="main-image">
+              <img id="promocao-imagem-principal" src="" alt="Imagem principal da promoção" />
+              <span class="promo-badge" id="promocao-desconto"></span>
+            </div>
+            <div class="image-gallery" id="promocao-galeria">
+              <!-- Imagens adicionais serão inseridas via JavaScript -->
+            </div>
+          </div>
+
+          <div class="promocao-info">
+            <h1 id="promocao-nome"></h1>
+            <div class="promocao-meta">
+              <p class="location"><i class="fa-solid fa-map-marker-alt"></i> <span id="promocao-local"></span></p>
+              <p class="dates"><i class="fa-solid fa-calendar"></i> <span id="promocao-datas"></span></p>
+              <p class="validity">Válido até: <span id="promocao-validade"></span></p>
+            </div>
+            <div class="ocupacao-box" id="promocao-ocupacao">
+              <!-- Conteúdo será inserido via JavaScript -->
+            </div>
+            <div class="price-box">
+              <div class="price">
+                <span class="original-price" id="promocao-preco-original"></span>
+                <span class="final-price" id="promocao-preco-final"></span>
+              </div>
+              <button id="btn-adicionar-carrinho" class="promo-button">
+                <i class="fa-solid fa-cart-plus"></i> Adicionar ao Carrinho
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="promocao-details">
+          <div class="tabs">
+            <button class="tab active" data-tab="descricao">Descrição</button>
+            <button class="tab" data-tab="itinerario">Itinerário</button>
+            <button class="tab" data-tab="inclui">O que inclui</button>
+            <button class="tab" data-tab="condicoes">Condições</button>
+          </div>
+
+          <div class="tab-content">
+            <div id="descricao" class="tab-pane active">
+              <h2>Descrição</h2>
+              <div id="promocao-descricao"></div>
+            </div>
+
+            <div id="itinerario" class="tab-pane">
+              <h2>Detalhes do Itinerário</h2>
+              
+              <!-- Seção de Voos -->
+              <div class="itinerario-section">
+                <h3><i class="fas fa-plane"></i> Informações do Voo</h3>
+                <div class="flight-results">
+                  <div id="promocao-voos" class="itinerario-grid">
+                    <!-- Voos serão inseridos via JavaScript -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Seção de Hotel -->
+              <div class="itinerario-section">
+                <h3><i class="fas fa-hotel"></i> Informações do Hotel</h3>
+                <div class="hotel-results">
+                  <div id="promocao-hotel" class="hotel-info">
+                    <!-- Detalhes do hotel serão inseridos via JavaScript -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="inclui" class="tab-pane">
+              <h2>O que inclui</h2>
+              <ul id="promocao-inclui" class="includes-list">
+                <!-- Itens incluídos serão inseridos via JavaScript -->
+              </ul>
+            </div>
+
+            <div id="condicoes" class="tab-pane">
+              <h2>Condições</h2>
+              <div id="promocao-condicoes"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Galeria de imagens">
+    <div class="lightbox-content">
+      <button class="lightbox-close" aria-label="Fechar galeria">
+        <i class="fas fa-times"></i>
+      </button>
+      <button class="lightbox-nav lightbox-prev" aria-label="Imagem anterior">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="lightbox-nav lightbox-next" aria-label="Próxima imagem">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <img src="" alt="" class="lightbox-image" />
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contacto.html">Contactos</a></li>
+          <li><a href="faq.html">Perguntas Frequentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Siga-nos</h3>
+        <div class="social-links">
+          <a href="https://facebook.com" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com" aria-label="Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://instagram.com" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Contactos</h3>
+        <p><i class="fa-solid fa-envelope"></i> Email: info@flyscape.pt</p>
+        <p><i class="fa-solid fa-phone"></i> Telefone: +351 123 456 789</p>
+        <p><i class="fa-solid fa-map-marker-alt"></i> Morada: Departamento de Economia, Gestão e Engenharia Industrial, Aveiro</p>
+      </div>
+    </div>
+    <hr>
+    <div class="footer-bottom">
+      <p>FlyScape — Your escape starts in the sky <i class="fa-solid fa-plane"></i></p>
+      <p><i class="fa-solid fa-copyright"></i> 2025 FlyScape. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/script_promocao_detalhes.js"></script>
+  <script src="js/script_nomeheader.js"></script>
+  <script src="js/script_contador_carrinho.js"></script>
+</body>
+</html> 

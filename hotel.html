@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="media/logo.png" />
+  <title>Hotéis | FlyScape</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style_global.css" />
+  <link rel="stylesheet" href="css/style_hotel.css" />
+</head>
+
+<body>
+  <header class="unified-header" role="banner">
+    <a href="index.html" class="header-left-link">
+      <div class="header-left">
+        <img src="media/logo.png" alt="Logótipo da FlyScape" />
+        <span class="site-name">FlyScape | Your escape starts in the sky</span>
+      </div>
+    </a>
+    <nav class="header-right" aria-label="Menu de Utilizador">
+      <a href="sobre.html" class="active" aria-current="page"><i class="fa-solid fa-info-circle"></i> Sobre Nós</a>
+      <a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a>
+      <a href="perfil.html"><i class="fa-solid fa-user"></i> <span id="user-display-name">Área de Cliente</span></a>
+      <a href="carrinho.html" aria-label="Carrinho"><i class="fa-solid fa-cart-shopping"></i> <span class="carrinho-contador">0</span></a>
+    </nav>
+  </header>
+
+  <nav class="nav-blue" role="navigation" aria-label="Menu Principal">
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+      <li><a href="voos.html"><i class="fa-solid fa-plane"></i> Voos</a></li>
+      <li><a href="hotel.html" class="active"><i class="fa-solid fa-hotel"></i> Hotéis</a></li>
+      <li><a href="pacotes.html"><i class="fa-solid fa-gift"></i> Pacotes</a></li>
+      <li><a href="promocoes.html"><i class="fa-solid fa-tags"></i> Promoções</a></li>
+    </ul>
+  </nav>
+
+  <main class="hotel-search-section">
+    <!-- Formulário de Busca -->
+    <section class="search-container" aria-label="Pesquisa de Hotéis">
+    <form class="search-form" id="search-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="destination"><i class="fa-solid fa-map-marker-alt"></i> Destino</label>
+          <input type="text" id="destination" name="destination" placeholder="Ex: Lisboa" />
+        </div>
+        <div class="form-group">
+          <label for="check-in-date"><i class="fa-solid fa-calendar"></i> Data de Check-in</label>
+          <input type="date" id="check-in-date" name="check-in-date" />
+        </div>
+        <div class="form-group">
+          <label for="check-out-date"><i class="fa-solid fa-calendar"></i> Data de Check-out</label>
+          <input type="date" id="check-out-date" name="check-out-date" />
+        </div>
+        <div class="form-group passengers-group">
+          <label><i class="fa-solid fa-users"></i> Ocupação</label>
+          <div class="dropdown">
+            <div class="dropdown-btn" id="dropdownBtn">1 Adulto, 0 Crianças, 1 Quarto</div>
+            <div class="dropdown-content" id="dropdownContent">
+              <div class="row">
+                <span>Adultos<br><small>(18+ anos)</small></span>
+                <div class="counter">
+                  <button type="button" class="decrement" data-type="adultos">-</button>
+                  <span id="adultosCount">1</span>
+                  <button type="button" class="increment" data-type="adultos">+</button>
+                </div>
+              </div>
+              <div class="row">
+                <span>Crianças<br><small>(0 - 17 anos)</small></span>
+                <div class="counter">
+                  <button type="button" class="decrement" data-type="criancas">-</button>
+                  <span id="criancasCount">0</span>
+                  <button type="button" class="increment" data-type="criancas">+</button>
+                </div>
+              </div>
+              <div class="row" id="childAges" style="display: none;">
+                <span>Idade das Crianças</span>
+                <div id="childAgeInputs"></div>
+              </div>
+              <div class="row">
+                <span>Quartos</span>
+                <div class="counter">
+                  <button type="button" class="decrement" data-type="quartos">-</button>
+                  <span id="quartosCount">1</span>
+                  <button type="button" class="increment" data-type="quartos">+</button>
+                </div>
+              </div>
+              <div class="info" id="passenger-note">Cada quarto suporta até 2 adultos e 1 criança até aos 12 anos. Crianças com mais de 12 anos necessitam de um quarto adicional.</div>
+              <br>
+              <button type="button" class="confirm-btn" id="confirmBtn">Confirmar</button>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="search-button" aria-label="Pesquisar hotéis">Pesquisar</button>
+      </div>
+      <!-- Mensagem de disponibilidade -->
+      <div class="availability-message" id="availability-message" style="display: none;"></div>
+    </form>
+  </section>
+
+    <!-- Filtros Avançados -->
+    <div class="filters-container">
+      <div class="filter-group">
+        <label>Nome do Hotel</label>
+        <input type="text" id="nome-hotel" placeholder="Digite o nome do hotel">
+        <div id="suggestions"></div>
+      <div class="direct-flights-group">
+        <input type="checkbox" id="cancelamento-gratuito">
+        <label class="direct-flights-label" for="cancelamento-gratuito">Cancelamento Gratuito</label>
+      </div>
+  </div>
+    <div class="filter-group">
+      <label>Tipo de Alojamento</label>
+      <select id="tipo-alojamento">
+        <option value="">Qualquer Alojamento</option>
+        <option value="Hotel">Hotel</option>
+        <option value="Resort">Resort</option>
+        <option value="Hostel">Hostel</option>
+        <option value="Apartamento">Apartamento</option>
+        <option value="Pousada">Pousada</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>Avaliação</label>
+      <select id="amenities-filter">
+        <option value="0">Qualquer Avaliação</option>
+        <option value="7.0">7.0+</option>
+        <option value="8.0">8.0+</option>
+        <option value="9.0">9.0+</option>
+      </select>
+    </div>
+    <div class="filter-group amenities-group">
+      <label>Comodidades</label>
+      <div class="dropdown">
+        <div class="dropdown-btn" id="amenitiesDropdownBtn">Selecionar Comodidades</div>
+        <div class="dropdown-content" id="amenitiesDropdownContent">
+          <div class="amenity-row">
+            <input type="checkbox" name="amenities" value="Wifi" id="wifi">
+            <span class="checkbox-text" data-for="wifi">Wifi</span>
+          </div>
+          <div class="amenity-row">
+            <input type="checkbox" name="amenities" value="Café da manhã" id="cafe">
+            <span class="checkbox-text" data-for="cafe">Café da manhã</span>
+          </div>
+          <div class="amenity-row">
+            <input type="checkbox" name="amenities" value="Piscina" id="piscina">
+            <span class="checkbox-text" data-for="piscina">Piscina</span>
+          </div>
+          <div class="amenity-row">
+            <input type="checkbox" name="amenities" value="Estacionamento" id="estacionamento">
+            <span class="checkbox-text" data-for="estacionamento">Estacionamento</span>
+          </div>
+          <div class="amenity-row">
+            <input type="checkbox" name="amenities" value="SPA" id="spa">
+            <span class="checkbox-text" data-for="spa">SPA</span>
+          </div>
+          <div class="amenity-row">
+            <input type="checkbox" name="amenities" value="Restaurante" id="restaurante">
+            <span class="checkbox-text" data-for="restaurante">Restaurante</span>
+          </div>
+          <button type="button" class="confirm-btn" id="amenitiesConfirmBtn">Confirmar</button>
+        </div>
+      </div>
+    </div>
+    <div class="filter-group price-distance-group">
+      <label>Faixa de Preço</label>
+      <input type="range" id="price-range" min="0" max="500" value="500">
+      <span id="price-value">Até 500€</span>
+    </div>
+    <div class="filter-group price-distance-group">
+      <label>Distância ao Centro</label>
+      <input type="range" id="distancia-centro" min="0" max="20" value="20">
+      <span id="distancia-value">Até 20km</span>
+    </div>
+    <button class="clear-filters" id="clear-filters">Limpar Filtros</button>
+  </div>
+
+    <!-- Container for form validation error messages -->
+    <div class="form-error-messages" id="form-error-messages"></div>
+
+      <!-- Container for "no hotels" message -->
+      <div class="no-hotels-container" id="no-hotels" style="display: none;">
+        <p>Nenhum hotel encontrado com os filtros selecionados.</p>
+        <p>Tente ajustar os seus filtros ou datas de viagem.</p>
+      </div>
+
+    <!-- Resultados de Hotéis -->
+    <section class="hotel-results">
+      <div class="results-header">
+        <p id="results-count">0 Hotéis Encontrados</p>
+        <div class="sort-options">
+          <label for="sort-by">Ordenar:</label>
+          <select id="sort-by" name="sort-by">
+            <option value="price-asc">Preço: Mais baixo</option>
+            <option value="price-desc">Preço: Mais alto</option>
+            <option value="rating-desc">Melhor Classificação</option>
+            <option value="distance-asc">Distância ao Centro</option>
+          </select>
+        </div>
+      </div>
+      <div id="hotel-list"></div>
+      <button class="load-more-button" id="load-more">Carregar Mais</button>
+      <div class="loading-bar" id="loading-bar"></div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contacto.html">Contactos</a></li>
+          <li><a href="faq.html">Perguntas Frequentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Siga-nos</h3>
+        <div class="social-links">
+          <a href="https://facebook.com" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com" aria-label="Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://instagram.com" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Contactos</h3>
+        <p><i class="fa-solid fa-envelope"></i> Email: info@flyscape.pt</p>
+        <p><i class="fa-solid fa-phone"></i> Telefone: +351 123 456 789</p>
+        <p><i class="fa-solid fa-map-marker-alt"></i> Morada: Departamento de Economia, Gestão e Engenharia Industrial, Aveiro</p>
+      </div>
+    </div>
+    <hr>
+    <div class="footer-bottom">
+      <p>FlyScape — Your escape starts in the sky <i class="fa-solid fa-plane"></i></p>
+      <p><i class="fa-solid fa-copyright"></i> 2025 FlyScape. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+
+  <script src="js/script_hotel.js"></script>
+  <script src="js/script_nomeheader.js"></script>
+  <script src="js/script_contador_carrinho.js"></script>
+  <script src="https://cdn.botpress.cloud/webchat/v2.5/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/05/20/17/20250520174136-28IOYRUB.js"></script>
+</body>
+</html>

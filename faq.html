@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="media/logo.png">
+    <title>Perguntas Frequentes | FlyScape</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style_global.css">
+    <link rel="stylesheet" href="css/style_faq.css">
+</head>
+<body>
+    <header class="unified-header transparent" role="banner">
+        <a href="index.html" class="header-left-link">
+            <div class="header-left">
+                <img src="media/logo.png" alt="Logótipo da FlyScape" loading="lazy">
+                <span class="site-name">FlyScape | Your escape starts in the sky</span>
+            </div>
+        </a>
+        <nav class="header-right" aria-label="Menu de Utilizador">
+            <a href="sobre.html"><i class="fa-solid fa-info-circle"></i> Sobre Nós</a>
+            <a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a>
+            <a href="perfil.html"><i class="fa-solid fa-user"></i> <span id="user-display-name">Área de Cliente</span></a>
+            <a href="carrinho.html" aria-label="Ver carrinho de compras"><i class="fa-solid fa-cart-shopping"></i> <span class="carrinho-contador">0</span></a>
+        </nav>
+    </header>
+
+    <nav class="nav-blue" role="navigation" aria-label="Menu Principal">
+        <ul>
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+            <li><a href="voos.html"><i class="fa-solid fa-plane"></i> Voos</a></li>
+            <li><a href="hotel.html"><i class="fa-solid fa-hotel"></i> Hotéis</a></li>
+            <li><a href="pacotes.html"><i class="fa-solid fa-gift"></i> Pacotes</a></li>
+            <li><a href="promocoes.html"><i class="fa-solid fa-tags"></i> Promoções</a></li>
+        </ul>
+    </nav>
+
+    <main class="faq-container">
+        <h1>Perguntas Frequentes</h1>
+        
+        <div class="faq-search">
+            <input type="text" id="searchFaq" placeholder="Pesquisar perguntas...">
+            <i class="fas fa-search"></i>
+        </div>
+
+        <div class="faq-categories">
+            <button class="category-btn active" data-category="all">Todas</button>
+            <button class="category-btn" data-category="reservas">Reservas</button>
+            <button class="category-btn" data-category="pagamentos">Pagamentos</button>
+            <button class="category-btn" data-category="cancelamentos">Cancelamentos</button>
+            <button class="category-btn" data-category="bagagem">Bagagem</button>
+        </div>
+
+        <div class="faq-list" id="faqList">
+            <div class="faq-item" data-category="reservas">
+                <div class="faq-question">
+                    <h3>Como faço para alterar minha reserva?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Para alterar sua reserva, acesse sua área de cliente e vá para "As suas Reservas". 
+                    Lá você encontrará todas as opções de alteração disponíveis para sua viagem.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="pagamentos">
+                <div class="faq-question">
+                    <h3>Quais são as formas de pagamento aceitas?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Aceitamos as seguintes formas de pagamento:</p>
+                    <ul>
+                        <li>Cartões de crédito (Visa, MasterCard, American Express)</li>
+                        <li>Cartões de débito</li>
+                        <li>PayPal</li>
+                        <li>MB Way</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="cancelamentos">
+                <div class="faq-question">
+                    <h3>Qual é a política de cancelamento?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Nossa política de cancelamento varia de acordo com o tipo de reserva:</p>
+                    <ul>
+                        <li>Até 48h antes: reembolso total</li>
+                        <li>24-48h antes: reembolso de 50%</li>
+                        <li>Menos de 24h: sem reembolso</li>
+                    </ul>
+                    <p>Algumas tarifas especiais podem ter regras diferentes.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="bagagem">
+                <div class="faq-question">
+                    <h3>Qual é o limite de bagagem permitido?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>O limite de bagagem depende da companhia aérea e da classe da passagem. 
+                    Em geral:</p>
+                    <ul>
+                        <li>Bagagem de mão: 8-10kg</li>
+                        <li>Bagagem despachada: 23-32kg</li>
+                    </ul>
+                    <p>Consulte os detalhes específicos na sua reserva.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Links Rápidos</h3>
+            <ul>
+              <li><a href="sobre.html">Sobre Nós</a></li>
+              <li><a href="contacto.html">Contactos</a></li>
+              <li><a href="faq.html">Perguntas Frequentes</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Siga-nos</h3>
+            <div class="social-links">
+              <a href="https://facebook.com" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://twitter.com" aria-label="Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+              <a href="https://instagram.com" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Contactos</h3>
+            <p><i class="fa-solid fa-envelope"></i> Email: info@flyscape.pt</p>
+            <p><i class="fa-solid fa-phone"></i> Telefone: +351 123 456 789</p>
+            <p><i class="fa-solid fa-map-marker-alt"></i> Morada: Departamento de Economia, Gestão e Engenharia Industrial, Aveiro</p>
+          </div>
+        </div>
+        <hr>
+        <div class="footer-bottom">
+          <p>FlyScape — Your escape starts in the sky <i class="fa-solid fa-plane"></i></p>
+          <p><i class="fa-solid fa-copyright"></i> 2025 FlyScape. Todos os direitos reservados.</p>
+        </div>
+      </footer>
+
+    <script src="js/script_faq.js"></script>
+    <script src="js/script_nomeheader.js"></script>
+    <script src="js/script_contador_carrinho.js"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v2.5/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/05/20/17/20250520174136-28IOYRUB.js"></script>
+</body>
+</html> 

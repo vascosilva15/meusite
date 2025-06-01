@@ -1,0 +1,176 @@
+.feedbacks-section {
+  padding: 40px 20px;
+  background-color: #f5f7fa;
+  text-align: center;
+}
+
+.feedbacks-section h1 {
+  color: #003366;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.feedbacks-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.feedback-card {
+  background-color: #ffffff;
+  border-left: 6px solid #0077cc;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px 20px;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feedback-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 119, 204, 0.2);
+}
+
+.feedback-card p {
+  font-size: 1rem;
+  color: #333;
+  margin: 15px 0;
+}
+
+.feedback-card h3 {
+  font-size: 1rem;
+  color: #444;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.feedback-card .destination {
+  font-size: 0.9rem;
+  color: #0077cc;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.stars {
+  color: #f5b301;
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+/* Estilos para o Formulário de Feedback */
+.feedback-form-container {
+  max-width: 500px;
+  margin: 80px auto 40px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form-container h2 {
+  color: #003366;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.form-group textarea,
+.form-group select,
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.form-group textarea:focus,
+.form-group select:focus,
+.form-group input:focus {
+  outline: none;
+  border-color: #0077cc;
+  box-shadow: 0 0 5px rgba(0, 119, 204, 0.3);
+}
+
+.form-group input[readonly] {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: left;
+  gap: 5px;
+  direction: rtl; /* Inverte a ordem visual para que star5 (valor 5) seja a primeira estrela à esquerda */
+}
+
+.star-rating input[type="radio"] {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 1.2rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.star-rating input[type="radio"]:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #f5b301; /* Destaca as estrelas ao selecionar ou passar o mouse */
+}
+
+/* Garante que a direção do texto volte ao normal para os ícones */
+.star-rating label i {
+  direction: ltr;
+}
+
+.submit-feedback-btn {
+  background-color: #0077cc;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-feedback-btn:hover {
+  background-color: #005fa3;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.success-message {
+  color: #2e7d32;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.visual-stars {
+  direction: ltr; /* Garante que as estrelas renderizadas nos feedbacks sejam exibidas da esquerda para a direita */
+}

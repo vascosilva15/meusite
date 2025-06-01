@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="media/logo.png" />
+  <title>FlyScape | Detalhes do Hotel</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style_global.css" />
+  <link rel="stylesheet" href="css/style_detalhes_hotel.css" />
+</head>
+<body>
+  <header class="unified-header" role="banner">
+    <a href="index.html" class="header-left-link">
+      <div class="header-left">
+        <img src="media/logo.png" alt="Logótipo da FlyScape" />
+        <span class="site-name">FlyScape | Your escape starts in the sky</span>
+      </div>
+    </a>
+    <nav class="header-right" aria-label="Menu de Utilizador">
+      <a href="sobre.html" class="active" aria-current="page"><i class="fa-solid fa-info-circle"></i> Sobre Nós</a>
+      <a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a>
+      <a href="perfil.html"><i class="fa-solid fa-user"></i> <span id="user-display-name">Área de Cliente</span></a>
+      <a href="carrinho.html" aria-label="Carrinho"><i class="fa-solid fa-cart-shopping"></i> <span class="carrinho-contador">0</span></a>
+    </nav>
+  </header>
+
+  <main class="hotel-details-container">
+    <section class="hotel-header">
+      <div class="hotel-info-header">
+        <a href="hotel.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar aos Hotéis</a>
+        <h1 id="hotel-name-header">Grande Hotel Lisboa</h1>
+        <p class="location"><i class="fas fa-map-marker-alt"></i> Av. 5 De Outubro 197, Avenidas Novas, Lisboa</p>
+        <div class="rating-reviews">
+          <span id="hotel-rating">9.2 / 10</span>
+          <span id="hotel-reviews">456 avaliações</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="price-container">
+          <div class="price-info">
+            <div class="price-main">
+              <span class="current-price" id="hotel-total-price"></span>
+            </div>
+            <div class="price-details">
+              <span class="stay-details" id="hotel-stay-details"></span>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="favorite-btn" id="favorite-btn" aria-label="Adicionar aos favoritos">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="hotel-gallery">
+      <!-- As imagens serão preenchidas pelo JavaScript -->
+    </section>
+
+    <section class="main-content">
+      <div class="left-column">
+        <div class="section about-section">
+          <h2>Sobre o Hotel</h2>
+          <p id="hotel-description">Localizado no coração de Lisboa, o Grande Hotel Lisboa oferece uma experiência luxuosa com vista deslumbrante para a cidade. Com quartos elegantemente decorados e serviços de primeira classe, é o destino perfeito para uma estadia memorável.</p>
+        </div>
+
+        <div class="section amenities-section">
+          <h2>Comodidades</h2>
+          <div class="amenities" id="hotel-amenities">
+            <!-- As comodidades serão preenchidas pelo JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="room-types">
+      <h2>Tipos de Quartos</h2>
+      <div class="room-card">
+        <h3>Quarto Standard</h3>
+        <p>25m² • 2 pessoas</p>
+        <p class="room-features"><i class="fas fa-bed"></i> Cama Queen • <i class="fas fa-eye"></i> Vista cidade • <i class="fas fa-wifi"></i> WiFi gratuito • <i class="fas fa-fan"></i> Ar condicionado</p>
+        <div class="room-price">
+          <span>120€</span> por noite
+        </div>
+        <button class="book-room-btn">Reservar este Quarto</button>
+      </div>
+      <div class="room-card">
+        <h3>Quarto Deluxe</h3>
+        <p>35m² • 2-3 pessoas</p>
+        <p class="room-features"><i class="fas fa-bed"></i> Cama King • <i class="fas fa-eye"></i> Vista rio • <i class="fas fa-glass-martini"></i> Minibar • <i class="fas fa-lock"></i> Cofre • <i class="fas fa-tshirt"></i> Roupão</p>
+        <div class="room-price">
+          <span>180€</span> por noite
+        </div>
+        <button class="book-room-btn">Reservar este Quarto</button>
+      </div>
+      <div class="room-card">
+        <h3>Suíte Executive</h3>
+        <p>50m² • 4 pessoas</p>
+        <p class="room-features"><i class="fas fa-couch"></i> Sala separada • <i class="fas fa-binoculars"></i> Vista panorâmica • <i class="fas fa-concierge-bell"></i> Serviço de quarto 24h • <i class="fas fa-champagne-glasses"></i> Champagne de boas-vindas</p>
+        <div class="room-price">
+          <span>280€</span> por noite
+        </div>
+        <button class="book-room-btn">Reservar este Quarto</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal para exibir a imagem ampliada -->
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img id="modal-image" src="" alt="Imagem Ampliada">
+  </div>
+
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contacto.html">Contactos</a></li>
+          <li><a href="faq.html">Perguntas Frequentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Siga-nos</h3>
+        <div class="social-links">
+          <a href="https://facebook.com" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com" aria-label="Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://instagram.com" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Contactos</h3>
+        <p><i class="fa-solid fa-envelope"></i> Email: info@flyscape.pt</p>
+        <p><i class="fa-solid fa-phone"></i> Telefone: +351 123 456 789</p>
+        <p><i class="fa-solid fa-map-marker-alt"></i> Morada: Departamento de Economia, Gestão e Engenharia Industrial, Aveiro</p>
+      </div>
+    </div>
+    <hr>
+    <div class="footer-bottom">
+      <p>FlyScape — Your escape starts in the sky <i class="fa-solid fa-plane"></i></p>
+      <p><i class="fa-solid fa-copyright"></i> 2025 FlyScape. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/script_detalhes_hotel.js"></script>
+  <script src="js/script_nomeheader.js"></script>
+  <script src="js/script_contador_carrinho.js"></script>
+  <script src="https://cdn.botpress.cloud/webchat/v2.5/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/05/20/17/20250520174136-28IOYRUB.js"></script>
+</body>
+</html>

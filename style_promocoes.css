@@ -1,0 +1,581 @@
+/* Estilos específicos para a página de promoções */
+
+/* Banner principal */
+.promo-banner {
+    background: linear-gradient(135deg, #003d80, #0077cc);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .promo-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .promo-banner p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+  
+  /* Container principal */
+  .promocoes-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  /* Grid de promoções */
+  .promocoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .no-results {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    color: #4b5563;
+    background: #f8fafc;
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .no-results[style*="block"] {
+    opacity: 1;
+  }
+  
+  /* Card de promoção */
+  .promo-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .promo-card a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .promo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .promo-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .promo-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #e53e3e;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .promo-card:hover .promo-badge {
+    transform: scale(1.1);
+  }
+  
+  .promo-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .promo-content h3 {
+    font-size: 1.5rem;
+    color: #1a202c;
+    margin-bottom: 10px;
+  }
+  
+  .promo-content p {
+    color: #4b5563;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+  .promo-content .promo-validity {
+    font-size: 0.9rem;
+    color: #6b7280;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  
+  .promo-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 15px 0;
+    background: #f8fafc;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border-left: 4px solid #0077cc;
+  }
+  
+  .promo-price .original-price {
+    color: #64748b;
+    text-decoration: line-through;
+    font-size: 1rem;
+    margin-bottom: 2px;
+  }
+  
+  .promo-price .final-price {
+    color: #0077cc;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  
+  .promo-button {
+    background: #0077cc;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 6px;
+    border: none;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .promo-button:hover {
+    background: #005fa3;
+    transform: translateY(-2px);
+  }
+  
+  .promo-button.reservar {
+    background: #10b981;
+  }
+  
+  .promo-button.reservar:hover {
+    background: #059669;
+  }
+  
+  .promo-button.adicionado {
+    background: #22c55e;
+  }
+  
+  .promo-button.adicionado:hover {
+    background: #16a34a;
+  }
+  
+  .promo-button i {
+    font-size: 1.1rem;
+  }
+  
+  /* Resultados e Ordenação */
+  .results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+  }
+  
+  .results-header h2 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+  }
+  
+  .results-header h2 span {
+    font-weight: inherit;
+    color: inherit;
+  }
+  
+  .sort-options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .sort-options label {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 0;
+    overflow: visible;
+  }
+  
+  .sort-options select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 0.9rem;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  
+  .sort-options select:hover,
+  .sort-options select:focus {
+    border-color: #005b96;
+  }
+  
+  @media (max-width: 768px) {
+    .results-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px;
+    }
+  
+    .results-header h2 {
+      font-size: 1.3rem;
+    }
+  
+    .sort-options {
+      width: 100%;
+    }
+  
+    .sort-options select {
+      flex: 1;
+    }
+  }
+  
+  /* Filtros de promoções */
+  .promo-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: #005b96;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .filters-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .filter-group {
+    flex: 1;
+    min-width: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+    position: relative;
+  }
+  
+  .filter-group label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    display: block;
+    line-height: 1.2;
+    position: static;
+    width: 100%;
+    color: #fff;
+  }
+  
+  .filter-group select,
+  .filter-group input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    width: 100%;
+    background: #fff;
+    color: #333;
+    height: 40px;
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  .filter-group input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  #preco-valor {
+    font-size: 0.9rem;
+    color: #fff;
+    margin-left: 10px;
+  }
+  
+  #limpar-filtros {
+    background: #fff;
+    color: #005b96;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    align-self: flex-end;
+  }
+  
+  #limpar-filtros:hover {
+    background: #f0f0f0;
+  }
+  
+  /* Newsletter section */
+  .promo-newsletter {
+    background: linear-gradient(135deg, #003d80, #0077cc);
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 40px auto;
+    max-width: 1000px;
+  }
+  
+  .promo-newsletter h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .promo-newsletter p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 10px;
+  }
+  
+  .newsletter-form.success {
+    animation: success-shake 0.5s ease;
+  }
+  
+  .newsletter-form input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  .newsletter-form button {
+    background: #e53e3e;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .newsletter-form button:hover {
+    background: #c53030;
+  }
+  
+  /* Animação de sucesso */
+  @keyframes success-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-3px); }
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .promo-banner h1 {
+      font-size: 2rem;
+    }
+  
+    .promo-banner p {
+      font-size: 1rem;
+    }
+  
+    .newsletter-form {
+      flex-direction: column;
+    }
+  
+    .newsletter-form button {
+      width: 100%;
+    }
+  
+    .mensagem-flutuante {
+      top: auto;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 90%;
+    }
+  
+    .mensagem-flutuante.mostrar {
+      transform: translateX(-50%);
+      opacity: 1;
+    }
+  
+    .promo-content .promo-validity {
+      font-size: 0.85rem;
+    }
+  
+    .promo-filters {
+      flex-direction: column;
+    }
+  
+    .filter-group {
+      min-width: 100%;
+    }
+  
+    #limpar-filtros {
+      width: 100%;
+      margin-top: 15px;
+    }
+  
+    .results-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px;
+    }
+  
+    .results-header h2 {
+      font-size: 1.3rem;
+    }
+  
+    .sort-options {
+      width: 100%;
+    }
+  
+    .sort-options select {
+      flex: 1;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .promo-banner h1 {
+      font-size: 1.75rem;
+    }
+  
+    .promocoes-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .promo-content h3 {
+      font-size: 1.25rem;
+    }
+  }
+  
+  /* Mensagens flutuantes */
+  .mensagem-flutuante {
+    display: none;
+  }
+  
+  /* Contador de Promoções */
+  .promocoes-contador {
+    margin: 20px 0;
+    font-size: 1.1rem;
+    color: #4b5563;
+    font-weight: 500;
+  }
+  
+  .promocoes-contador #numero-promocoes {
+    color: #0077cc;
+    font-weight: 600;
+  }
+  
+  /* Custom Alert Styles */
+  .custom-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #28a745;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: translateX(150%);
+    transition: transform 0.3s ease-in-out;
+    font-size: 0.95rem;
+  }
+  
+  .custom-alert.show {
+    transform: translateX(0);
+  }
+  
+  .custom-alert i {
+    font-size: 1.2rem;
+  }
+  
+  .custom-alert.success {
+    background: #28a745;
+  }
+  
+  .custom-alert.error {
+    background: #dc3545;
+  }
+  
+  .custom-alert.info {
+    background: #17a2b8;
+  }
+
+.promo-content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.promo-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  flex: 1;
+}
+
+/* Remove unnecessary footer styles */
+.promo-footer {
+    display: none;
+}
+
+/* Update card hover effect */
+.promo-card:hover .promo-price {
+    border-left-color: #005fa3;
+    background: #f1f5f9;
+}
+
+.promo-card:hover .promo-price .final-price {
+    color: #005fa3;
+}

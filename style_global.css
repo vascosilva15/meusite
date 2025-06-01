@@ -1,0 +1,488 @@
+  /* Reset e base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  /* Cabeçalho */
+  .unified-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003d80;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+  .unified-header .header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .unified-header .header-left img {
+    width: 50px;
+  }
+  .unified-header .site-name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .unified-header .header-right a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+  }
+  .unified-header .header-right a:hover {
+    text-decoration: none;
+  }
+
+  .header-left-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .header-left-link:hover {
+    text-decoration: none;
+  }
+
+  /* Navegação azul */
+  .nav-blue {
+    background-color: #005bb5;
+    padding: 10px 0;
+  }
+  .nav-blue ul {
+    display: flex;
+    justify-content: left;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .nav-blue ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nav-blue ul li a:hover,
+  .nav-blue ul li a.active {
+    background-color: #003d80;
+    border-radius: 6px;
+  }
+
+/* Banner com imagem no HTML */
+.hero-header {
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+}
+
+.hero-header img.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Texto sobreposto à imagem */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+  /* Botões Gerais */
+  button {
+    padding: 10px 20px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  /* Inputs e Selects */
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  /* Labels */
+  label {
+    font-weight: bold;
+    display: block;
+  }
+
+  /* Forms */
+  form {
+    display: grid;
+    gap: 10px;
+  }
+  .form-col {
+    display: flex;
+    flex-direction: column;
+  }
+  .btn-col {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* Secções */
+  section {
+    padding: 40px 2%;
+  }
+
+  /* Títulos de secção */
+  section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #003d80;
+    font-weight: bold;
+  }
+
+  /* Cards de destinos */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    padding-bottom: 16px;
+  }
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  .card h3 {
+    margin: 10px 0;
+  }
+  .card p {
+    padding: 0 10px;
+  }
+
+  /* Carousel de reviews */
+  .reviews .carousel {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .review {
+    background-color: #fff;
+    padding: 20px;
+    border-left: 5px solid #0077cc;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+  .review blockquote {
+    font-style: italic;
+  }
+
+  /* Newsletter */
+ /* Newsletter Section */
+.newsletter {
+  padding: 64px 16px;
+  text-align: center;
+  background: #003d80; /* Solid dark blue to match FlyScape branding */
+  color: #ffffff;
+  border-radius: 16px;
+  max-width: 1200px;
+  margin: 0 auto 64px;
+}
+
+.newsletter h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #ffffff; /* White for contrast */
+}
+
+.newsletter p {
+  font-size: 1.25rem;
+  margin-bottom: 24px;
+  color: #ffffff; /* White for readability */
+}
+
+#form-newsletter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#newsletter-email {
+  flex: 1;
+  min-width: 250px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #003d80; /* Dark blue text */
+  background: #e5f3ff; /* Light blue background */
+}
+
+#newsletter-email:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 153, 229, 0.3); /* Blue focus ring */
+}
+
+#form-newsletter button {
+  padding: 12px 24px;
+  background: #e5f3ff; /* Light blue button */
+  color: #003d80; /* Dark blue text */
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+#form-newsletter button:hover {
+  background: #cce6ff; /* Slightly darker blue on hover */
+  color: #001d3d; /* Darker blue text */
+  transform: translateY(-2px);
+}
+
+.form-message {
+  font-size: 1rem;
+  color: #ffffff; /* White for contrast */
+  margin-top: 12px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Responsive Adjustments for Newsletter */
+@media (max-width: 768px) {
+  .newsletter {
+    padding: 40px 16px;
+  }
+
+  .newsletter h2 {
+    font-size: 2rem;
+  }
+
+  #form-newsletter {
+    flex-direction: column;
+  }
+
+  #newsletter-email {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .newsletter h2 {
+    font-size: 1.75rem;
+  }
+
+  .newsletter p {
+    font-size: 1rem;
+  }
+}
+
+  /* Rodapé */
+  footer {
+    background: #003d80;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  /* Responsivo */
+  @media (min-width: 768px) {
+    .newsletter form {
+      flex-direction: row;
+      align-items: center;
+    }
+    .newsletter input[type="email"] {
+      flex: 1;
+      margin-right: 10px;
+      margin-bottom: 0;
+    }
+  }
+
+  /* Newsletter Form */
+#form-newsletter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+#form-newsletter input[type="email"] {
+  min-width: 250px;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 15px;
+  background: #f9fafb;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+#form-newsletter input[type="email"]:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 0 3px rgba(0,86,179,0.15);
+}
+#form-newsletter button {
+  padding: 12px 20px;
+  background: #0056b3;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+#form-newsletter button:hover {
+  background: #003d80;
+  transform: translateY(-1px);
+}
+  /* Footer */
+  footer {
+    background: #003d80;
+    color: #fff;
+    padding: 40px 2% 20px;
+  }
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    gap: 20px;
+  }
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+  }
+  .footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  .footer-section ul li a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .footer-section ul li a:hover {
+    color: #fff;
+  }
+  .social-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+  .social-links a {
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+  .social-links a:hover {
+    color: #0056b3;
+  }
+  .footer-section p {
+    margin: 10px 0;
+    color: #d1d5db;
+  }
+  .footer-section p i {
+    margin-right: 10px;
+  }
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #003d80;
+    padding-top: 20px;
+  }
+  .footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    color: #d1d5db;
+  }
+  .footer-bottom p i {
+    margin-right: 8px;
+  }
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+/* Cart counter styles */
+.header-right a {
+  position: relative;
+}
+
+.carrinho-contador {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  min-width: 16px;
+  height: 16px;
+  background: #ff0000;
+  color: white;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid white;
+}
+
+

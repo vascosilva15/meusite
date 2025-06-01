@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="media/logo.png" />
+  <title>Feedbacks | FlyScape</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style_global.css" />
+  <link rel="stylesheet" href="css/style_feedbacks.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="unified-header transparent" role="banner">
+    <a href="index.html" class="header-left-link">
+      <div class="header-left">
+        <img src="media/logo.png" alt="Logótipo da FlyScape" />
+        <span class="site-name">FlyScape | Your escape starts in the sky</span>
+      </div>
+    </a>
+    <nav class="header-right" aria-label="Menu de Utilizador">
+      <a href="sobre.html"><i class="fa-solid fa-info-circle"></i> Sobre Nós</a>
+      <a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a>
+      <a href="perfil.html"><i class="fa-solid fa-user"></i> <span id="user-display-name">Área de Cliente</span></a>
+      <a href="carrinho.html" aria-label="Carrinho"><i class="fa-solid fa-cart-shopping"></i> <span class="carrinho-contador">0</span></a>
+    </nav>
+  </header>
+
+  <!-- Menu Principal -->
+  <nav class="nav-blue" role="navigation" aria-label="Menu Principal">
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+      <li><a href="voos.html"><i class="fa-solid fa-plane"></i> Voos</a></li>
+      <li><a href="hotel.html"><i class="fa-solid fa-hotel"></i> Hotéis</a></li>
+      <li><a href="pacotes.html"><i class="fa-solid fa-gift"></i> Pacotes</a></li>
+      <li><a href="promocoes.html"><i class="fa-solid fa-tags"></i> Promoções</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <main class="feedbacks-section">
+    <h1>O que dizem os nossos clientes</h1>
+
+    <!-- Container de Feedbacks -->
+    <div class="feedbacks-container" id="feedbacks-container">
+      <!-- Feedbacks serão renderizados dinamicamente -->
+    </div>
+
+    <!-- Formulário de Feedback -->
+    <div class="feedback-form-container">
+      <h2>Deixe o seu Feedback</h2>
+      <div id="feedback-message" role="alert"></div>
+      <form id="feedback-form">
+        <div class="form-group">
+          <label for="feedback-comment">Comentário:</label>
+          <textarea id="feedback-comment" name="comment" rows="4" maxlength="200" required placeholder="Partilhe a sua experiência..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>Avaliação:</label>
+          <div class="star-rating">
+            <input type="radio" name="rating" id="star5" value="5" required><label for="star5"><i class="fa-solid fa-star"></i></label>
+            <input type="radio" name="rating" id="star4" value="4" required><label for="star4"><i class="fa-solid fa-star"></i></label>
+            <input type="radio" name="rating" id="star3" value="3" required><label for="star3"><i class="fa-solid fa-star"></i></label>
+            <input type="radio" name="rating" id="star2" value="2" required><label for="star2"><i class="fa-solid fa-star"></i></label>
+            <input type="radio" name="rating" id="star1" value="1" required><label for="star1"><i class="fa-solid fa-star"></i></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="feedback-destination">Destino:</label>
+          <input type="text" id="feedback-destination" name="destination" required placeholder="Ex: Paris, Londres..." />
+        </div>
+        <button type="submit" class="submit-feedback-btn">Submeter Feedback</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contacto.html">Contactos</a></li>
+          <li><a href="faq.html">Perguntas Frequentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Siga-nos</h3>
+        <div class="social-links">
+          <a href="https://facebook.com" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com" aria-label="Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://instagram.com" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Contactos</h3>
+        <p><i class="fa-solid fa-envelope"></i> Email: info@flyscape.pt</p>
+        <p><i class="fa-solid fa-phone"></i> Telefone: +351 123 456 789</p>
+        <p><i class="fa-solid fa-map-marker-alt"></i> Morada: Departamento de Economia, Gestão e Engenharia Industrial, Aveiro</p>
+      </div>
+    </div>
+    <hr>
+    <div class="footer-bottom">
+      <p>FlyScape — Your escape starts in the sky <i class="fa-solid fa-plane"></i></p>
+      <p><i class="fa-solid fa-copyright"></i> 2025 FlyScape. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/script_feedbacks.js"></script>
+  <script src="js/script_nomeheader.js"></script>
+  <script src="js/script_contador_carrinho.js"></script>
+</body>
+</html>

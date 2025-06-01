@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/png" href="media/logo.png" />
+    <title>Contacto | FlyScape</title>
+
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- CSS principal e da página -->
+    <link rel="stylesheet" href="css/style_global.css" />
+    <link rel="stylesheet" href="css/style_contacto.css" />
+  </head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="unified-header transparent" role="banner">
+    <a href="index.html" class="header-left-link">
+      <div class="header-left">
+        <img src="media/logo.png" alt="Logótipo da Agência" />
+        <span class="site-name">FlyScape | Your escape starts in the sky</span>
+      </div>
+    </a>
+    <nav class="header-right" aria-label="Menu de Utilizador">
+      <a href="sobre.html"><i class="fa-solid fa-info-circle"></i> Sobre Nós</a>
+      <a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a>
+      <a href="perfil.html" class="active" aria-current="page"><i class="fa-solid fa-user"></i> <span id="user-display-name">Área de Cliente</span></a>
+      <a href="carrinho.html" aria-label="Carrinho"><i class="fa-solid fa-cart-shopping"></i> <span class="carrinho-contador">0</span></a>
+    </nav>
+  </header>
+
+  <!-- Navegação -->
+  <nav class="nav-blue left-align">
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+      <li><a href="voos.html"><i class="fa-solid fa-plane"></i> Voos</a></li>
+      <li><a href="hotel.html"><i class="fa-solid fa-hotel"></i> Hotéis</a></li>
+      <li><a href="pacotes.html"><i class="fa-solid fa-gift"></i> Pacotes</a></li>
+      <li><a href="promocoes.html"><i class="fa-solid fa-tags"></i> Promoções</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-header">
+    <img src="media/banner_c.jpg" alt="Banner Contactos" class="hero-img" />
+    <div class="hero-overlay">
+      <h1>Entre em Contacto</h1>
+      <p>Estamos aqui para responder às suas questões e ajudá-lo a planear a sua próxima aventura</p>
+    </div>
+  </div>
+
+  <!-- Secção de Contacto -->
+  <section class="contacto-section">
+    <div class="contacto-container">
+      
+      <!-- Formulário -->
+      <div class="contact-form">
+        <h2>Envie-nos uma mensagem</h2>
+        <form>
+          <div class="input-row">
+            <div class="input-group">
+              <label for="nome">Nome Completo</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+            </div>
+            <div class="input-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
+            </div>
+          </div>
+          <div class="input-row">
+            <div class="input-group">
+              <label for="telefone">Telefone</label>
+              <input type="text" id="telefone" name="telefone" placeholder="+351 912 345 678">
+            </div>
+            <div class="input-group">
+              <label for="assunto">Assunto</label>
+              <input type="text" id="assunto" name="assunto" placeholder="Assunto da mensagem">
+            </div>
+          </div>
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Como podemos ajudar?" required></textarea>
+          <button type="submit"><i class="fa-solid fa-paper-plane"></i> Enviar Mensagem</button>
+        </form>
+      </div>
+
+      <!-- Informações -->
+      <div class="contact-info">
+        <h2>Informações de Contato</h2>
+        <div class="info-item">
+          <i class="fa-solid fa-phone"></i>
+          <p><strong>Telefone</strong><br>Atendimento: +351 213 456 789<br>Reservas: +351 213 456 790</p>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-envelope"></i>
+          <p><strong>Email</strong><br>Informações: info@flyscape.pt<br>Reservas: reservas@flyscape.pt</p>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <p><strong>Escritório Principal</strong><br>Departamento de Economia, Gestão, Engenharia Industrial e Turismo<br>3810-193 Aveiro<br>Portugal</p>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-clock"></i>
+          <p><strong>Horário de Funcionamento</strong><br>Segunda a Sexta: 9h - 19h<br>Sábado: 10h - 15h<br>Domingo e Feriados: Fechado</p>
+        </div>
+        <div class="info-emergencia">
+          <h3>Serviço de Emergência 24h</h3>
+          <p>Para emergências relacionadas com viagens já reservadas connosco, dispomos de um serviço de atendimento 24 horas.</p>
+          <p><strong style="color:#0a84ff">+351 915 789 123</strong></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Google Maps -->
+  <section class="local">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3027.956056075461!2d-8.65958252412121!3d40.63085107140602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd23a2aba8baaaab%3A0x213399ac2de96e43!2sDepartamento%20de%20Economia%2C%20Gest%C3%A3o%2C%20Engenharia%20Industrial%20e%20Turismo!5e0!3m2!1spt-PT!2spt!4v1746614753118!5m2!1spt-PT!2spt" 
+      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contacto.html">Contactos</a></li>
+          <li><a href="faq.html">Perguntas Frequentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Siga-nos</h3>
+        <div class="social-links">
+          <a href="https://facebook.com" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com" aria-label="Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://instagram.com" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Contactos</h3>
+        <p><i class="fa-solid fa-envelope"></i> Email: info@flyscape.pt</p>
+        <p><i class="fa-solid fa-phone"></i> Telefone: +351 123 456 789</p>
+        <p><i class="fa-solid fa-map-marker-alt"></i> Morada: Departamento de Economia, Gestão e Engenharia Industrial, Aveiro</p>
+      </div>
+    </div>
+    <hr>
+    <div class="footer-bottom">
+      <p>FlyScape — Your escape starts in the sky <i class="fa-solid fa-plane"></i></p>
+      <p><i class="fa-solid fa-copyright"></i> 2025 FlyScape. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/script_contacto.js"></script>
+  <script src="js/script_nomeheader.js"></script>
+  <script src="js/script_contador_carrinho.js"></script>
+  <script src="https://cdn.botpress.cloud/webchat/v2.5/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/05/20/17/20250520174136-28IOYRUB.js"></script>
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="media/logo.png" />
+  <title>Inicio | FlyScape</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style_global.css" />
+  <link rel="stylesheet" href="css/style_index.css" />
+</head>
+
+<body>
+    <main>
+      <div class="carousel-container" aria-hidden="true">
+        <div class="carousel-slide">
+          <img src="media/paisagem1.jpg" alt="Paisagem Destino 1" />
+          <img src="media/paisagem2.jpg" alt="Paisagem Destino 2" />
+          <img src="media/paisagem3.jpg" alt="Paisagem Destino 3" />
+        </div>
+      </div>
+      <div class="overlay"></div>
+      <header class="unified-header transparent" role="banner">
+          <div class="header-left">
+            <img src="media/logo.png" alt="Logótipo da Agência" />
+            <span class="site-name">FlyScape | Your escape starts in the sky</span>
+          </div>
+        <nav class="header-right" aria-label="Menu de Utilizador">
+          <a href="sobre.html"><i class="fa-solid fa-info-circle"></i> Sobre Nós</a>
+          <a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a>
+          <a href="perfil.html" class="active" aria-current="page"><i class="fa-solid fa-user"></i> <span id="user-display-name">Área de Cliente</span></a>
+          <a href="carrinho.html" aria-label="Carrinho"><i class="fa-solid fa-cart-shopping"></i> <span class="carrinho-contador">0</span></a>
+        </nav>
+      </header>
+    
+      <nav class="nav-blue" role="navigation" aria-label="Menu Principal">
+        <ul>
+          <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> Início</a></li>
+          <li><a href="voos.html"><i class="fa-solid fa-plane"></i> Voos</a></li>
+          <li><a href="hotel.html"><i class="fa-solid fa-hotel"></i> Hotéis</a></li>
+          <li><a href="pacotes.html"><i class="fa-solid fa-gift"></i> Pacotes</a></li>
+          <li><a href="promocoes.html"><i class="fa-solid fa-tags"></i> Promoções</a></li>
+        </ul>
+      </nav>
+      <section class="hero hero-centered" aria-label="Secção Principal com Destaques">
+      <div class="hero-inner">
+        <h1>A Sua Aventura Começa Aqui</h1>
+        <p><i class="fa-solid fa-globe"></i> Descubra voos, hotéis e pacotes de forma rápida e fácil.</p>
+
+        <section class="search-container" aria-label="Formulários de Pesquisa">
+          <ul class="tabs" role="tablist">
+            <li class="tab active" data-tab="voo-form" role="tab" aria-selected="true" aria-controls="voo-form">Voos</li>
+            <li class="tab" data-tab="hotel-form" role="tab" aria-selected="false" aria-controls="hotel-form">Hotéis</li>
+            <li class="tab" data-tab="voo-hotel-form" role="tab" aria-selected="false" aria-controls="voo-hotel-form">Voo+Hotel</li>
+          </ul>
+
+          <div class="tab-content">
+            <!-- Formulário de Voos -->
+            <form id="voo-form" class="form active" action="voos.html" method="GET" aria-label="Pesquisar Voos">
+              <div class="form-col">
+                <label for="origem"><i class="fa-solid fa-plane-departure"></i> Origem</label>
+                <input type="text" id="origem" name="origem" placeholder="Ex: Porto (OPO)" required />
+              </div>
+              <div class="form-col">
+                <label for="destino"><i class="fa-solid fa-plane-arrival"></i> Destino</label>
+                <input type="text" id="destino" name="destino" placeholder="Ex: Lisboa (LIS)" required />
+              </div>
+              <div class="form-col">
+                <label for="data-ida"><i class="fa-solid fa-calendar"></i> Data de Ida</label>
+                <input type="date" id="data-ida" name="data-ida" required />
+              </div>
+              <div class="form-col">
+                <label for="data-volta"><i class="fa-solid fa-calendar"></i> Data de Volta</label>
+                <input type="date" id="data-volta" name="data-volta" required />
+              </div>
+              <div class="form-col passengers-group">
+                <label for="dropdownBtn"><i class="fa-solid fa-users"></i> Passageiros</label>
+                <div class="dropdown">
+                  <div class="dropdown-btn" id="dropdownBtn" aria-expanded="false" role="button">1 Adulto</div>
+                  <div class="dropdown-content" id="dropdownContent">
+                    <div class="row">
+                      <span>Adultos<br><small>(12+ anos)</small></span>
+                      <div class="counter">
+                        <button type="button" class="decrement" data-type="adultos">-</button>
+                        <span id="adultosCount">1</span>
+                        <button type="button" class="increment" data-type="adultos">+</button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <span>Crianças<br><small>(2 - 11 anos)</small></span>
+                      <div class="counter">
+                        <button type="button" class="decrement" data-type="criancas">-</button>
+                        <span id="criancasCount">0</span>
+                        <button type="button" class="increment" data-type="criancas">+</button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <span>Bebés<br><small>(0 - 2 anos)</small></span>
+                      <div class="counter">
+                        <button type="button" class="decrement" data-type="bebes">-</button>
+                        <span id="bebesCount">0</span>
+                        <button type="button" class="increment" data-type="bebes">+</button>
+                      </div>
+                    </div>
+                    <button type="button" class="confirm-btn" id="confirmBtn">Confirmar</button>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-col">
+                <button type="submit" class="search-button" aria-label="Pesquisar voos"><i class="fa-solid fa-magnifying-glass"></i> Procurar</button>
+              </div>
+            </form>
+
+            <!-- Formulário de Hotéis -->
+            <form id="hotel-form" class="form" action="hotel.html" method="GET" aria-label="Pesquisar Hotéis">
+              <div class="form-col">
+                <label for="hotel-destino"><i class="fa-solid fa-map-marker-alt"></i> Destino</label>
+                <input type="text" id="hotel-destino" name="destino" placeholder="Ex: Lisboa" required />
+              </div>
+              <div class="form-col">
+                <label for="checkin"><i class="fa-solid fa-calendar"></i> Check-in</label>
+                <input type="date" id="checkin" name="checkin" required />
+              </div>
+              <div class="form-col">
+                <label for="checkout"><i class="fa-solid fa-calendar"></i> Check-out</label>
+                <input type="date" id="checkout" name="checkout" required />
+              </div>
+              <div class="form-col passengers-group">
+                <label for="hotel-dropdownBtn"><i class="fa-solid fa-users"></i> Ocupação</label>
+                <div class="dropdown">
+                  <div class="dropdown-btn" id="hotel-dropdownBtn" aria-expanded="false" role="button">1 Adulto, 0 Crianças, 1 Quarto</div>
+                  <div class="dropdown-content" id="hotel-dropdownContent">
+                    <div class="row">
+                      <span>Adultos<br><small>(18+ anos)</small></span>
+                      <div class="counter">
+                        <button type="button" class="decrement" data-type="hotel-adultos">-</button>
+                        <span id="hotel-adultosCount">1</span>
+                        <button type="button" class="increment" data-type="hotel-adultos">+</button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <span>Crianças<br><small>(0 - 17 anos)</small></span>
+                      <div class="counter">
+                        <button type="button" class="decrement" data-type="hotel-criancas">-</button>
+                        <span id="hotel-criancasCount">0</span>
+                        <button type="button" class="increment" data-type="hotel-criancas">+</button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <span>Quartos</span>
+                      <div class="counter">
+                        <button type="button" class="decrement" data-type="hotel-quartos">-</button>
+                        <span id="hotel-quartosCount">1</span>
+                        <button type="button" class="increment" data-type="hotel-quartos">+</button>
+                      </div>
+                    </div>
+                    <div id="hotel-childAges" style="display: none; margin-top: 10px;">
+                      <label>Idades das Crianças:</label>
+                      <div id="hotel-childAgeInputs"></div>
+                    </div>
+                    <div class="info">Cada quarto suporta até 2 adultos e 1 criança até 12 anos. Crianças acima de 12 anos requerem um quarto adicional.</div>
+                    <button type="button" class="confirm-btn" id="hotel-confirmBtn">Confirmar</button>
+                  </div>
+                </div>            
+              </div>
+              <div class="btn-col">
+                <button type="submit" class="search-button" aria-label="Pesquisar hotéis"><i class="fa-solid fa-magnifying-glass"></i> Procurar</button>
+              </div>
+            </form>
+
+            <!-- Formulário de Voo+Hotel -->
+            <form id="voo-hotel-form" class="form" action="destinos.html" method="GET" aria-label="Pesquisar Pacotes Voo + Hotel">
+              <div class="form-col">
+                <label for="partida"><i class="fa-solid fa-plane-departure"></i> Origem</label>
+                <input type="text" id="partida" name="partida" placeholder="Ex: Porto (OPO)" required />
+              </div>
+              <div class="form-col">
+                <label for="destino-vh"><i class="fa-solid fa-plane-arrival"></i> Destino</label>
+                <input type="text" id="destino-vh" name="destino-vh" placeholder="Ex: Lisboa (LIS)" required />
+              </div>
+              <div class="form-col">
+                <label for="ida-vh"><i class="fa-solid fa-calendar"></i> Data de Ida</label>
+                <input type="date" id="partida-vh" name="ida-vh" required />
+              </div>
+              <div class="form-col">
+                <label for="volta-vh"><i class="fa-solid fa-calendar"></i> Data de Volta</label>
+                <input type="date" id="volta-vh" name="volta-vh" required />
+              </div>
+              <div class="form-col passengers-group">
+                <label for="vh-dropdownBtn"><i class="fa-solid fa-users"></i> Passageiros</label>
+                <div class="dropdown">
+                  <div class="dropdown-btn" id="vh-dropdownBtn" aria-expanded="false" role="button">1 Adulto</div>
+                  <div class="dropdown-content" id="vh-dropdownContent">
+                    <div class="row">
+                      <span>Adultos<br><small>(12+ anos)</small></span>
+                      <div class="counter">
+                        <button type="button" class="decrement" data-type="vh-adultos">-</button>
+                        <span id="vh-adultosCount">1</span>
+                        <button type="button" class="increment" data-type="vh-adultos">+</button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <span>Crianças<br><small>(2 - 11 anos)</small></span>
+                      <div class="counter">
+                        <button type="button" class="decrement" data-type="vh-criancas">-</button>
+                        <span id="vh-criancasCount">0</span>
+                        <button type="button" class="increment" data-type="vh-criancas">+</button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <span>Bebés<br><small>(0 - 2 anos)</small></span>
+                      <div class="counter">
+                        <button type="button" class="decrement" data-type="vh-bebes">-</button>
+                        <span id="vh-bebesCount">0</span>
+                        <button type="button" class="increment" data-type="vh-bebes">+</button>
+                      </div>
+                    </div>
+                    <button type="button" class="confirm-btn" id="vh-confirmBtn">Confirmar</button>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-col">
+                <button type="submit" class="search-button" aria-label="Pesquisar voo+hotel"><i class="fa-solid fa-magnifying-glass"></i> Procurar</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="destaques" aria-labelledby="titulo-destaques">
+      <h2 id="titulo-destaques">Destinos em Destaque</h2>
+      <div class="cards">
+        <article class="card">
+          <img src="media/londres.jpg" alt="Imagem de Destino 1" />
+          <h3>Londres</h3>
+          <p>Experiência única e inesquecível.</p>
+        </article>
+        <article class="card">
+          <img src="media/rio_janeiro1.jpg" alt="Imagem de Destino 2" />
+          <h3>Rio de Janeiro</h3>
+          <p>Descubra culturas e belezas naturais.</p>
+        </article>
+        <article class="card">
+          <img src="media/cidade-cabo.jpg" alt="Imagem de Destino 3" />
+          <h3>Cidade do Cabo</h3>
+          <p>Explore paisagens deslumbrantes.</p>
+        </article>
+      </div>
+      <div class="destinos">
+        <a href="destinos.html">Ver Todos os Destinos <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </section>
+
+    <section class="ofertas" aria-labelledby="titulo-ofertas">
+      <h2 id="titulo-ofertas">As Melhores Ofertas</h2>
+      <div class="cards">
+        <article class="card">          
+          <img src="media/paris.jpg" alt="Pacote Paris" />
+          <div class="card-content">
+            <span class="discount-badge">-30%</span>
+            <h3>Paris</h3>
+            <p class="description">3 noites no Hotel Le Petit com voo incluído</p>
+            <div class="price-info">
+              <span class="original-price">€899</span>
+              <span class="current-price">€629</span>
+            </div>
+            <a href="promocao-detalhes.html?id=paris" class="ver-oferta">Ver Oferta <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="card">          
+          <img src="media/roma.jpg" alt="Pacote Roma" />
+          <div class="card-content">
+            <span class="discount-badge">-25%</span>
+            <h3>Roma</h3>
+            <p class="description">6 noites no Hotel Colosseum com voo incluído</p>
+            <div class="price-info">
+              <span class="original-price">€799</span>
+              <span class="current-price">€599</span>
+            </div>
+            <a href="promocoes.html" class="ver-oferta">Ver Oferta <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="card">          
+          <img src="media/madrid.jpg" alt="Pacote Madrid" />
+          <div class="card-content">
+            <span class="discount-badge">-25%</span>
+            <h3>Madrid</h3>
+            <p class="description">5 noites no Hotel Gran Via com voo incluído</p>
+            <div class="price-info">
+              <span class="original-price">€799</span>
+              <span class="current-price">€599</span>
+            </div>
+            <a href="promocoes.html" class="ver-oferta">Ver Oferta <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+      <div class="ver-mais-ofertas">
+        <a href="promocoes.html">Ver Todas as Ofertas <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </section>
+
+    <section class="why-travel" aria-labelledby="titulo-why-travel">
+      <h2 id="titulo-why-travel">Porquê Viajar Connosco?</h2>
+      <div class="why-travel-cards">
+        <article class="why-card">
+          <i class="fa-solid fa-headset"></i>
+          <h3>Suporte 24h</h3>
+          <p>Assistência a qualquer hora, em qualquer lugar.</p>
+        </article>
+        <article class="why-card">
+          <i class="fa-solid fa-star"></i>
+          <h3>Experiências Únicas</h3>
+          <p>Viagens personalizadas e memoráveis.</p>
+        </article>
+        <article class="why-card">
+          <i class="fa-solid fa-shield-alt"></i>
+          <h3>Garantia de Qualidade</h3>
+          <p>Serviços testados e confiáveis.</p>
+        </article>
+        <article class="why-card">
+          <i class="fa-solid fa-globe"></i>
+          <h3>Destinos Exclusivos</h3>
+          <p>Lugares que só nós oferecemos.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="reviews" aria-labelledby="titulo-reviews">
+      <h2 id="titulo-reviews">O que dizem os nossos clientes</h2>
+      <div class="carousel" role="region" aria-label="Testemunhos de Clientes">
+        <blockquote class="review">
+          <p>"A experiência foi fantástica. Recomendo a todos!"</p>
+          <div class="stars" aria-label="Avaliação de 5 estrelas">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <footer class="autor">Joana, Lisboa</footer>
+        </blockquote>
+        <blockquote class="review">
+          <p>"Viajar com esta agência mudou a minha perspetiva. Serviço de topo!"</p>
+          <div class="stars" aria-label="Avaliação de 4 estrelas">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <footer class="autor">Miguel, Porto</footer>
+        </blockquote>
+        <blockquote class="review">
+          <p>"Ofertas incríveis e atendimento personalizado."</p>
+          <div class="stars" aria-label="Avaliação de 5 estrelas">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <footer class="autor">Carla, Faro</footer>
+        </blockquote>
+      </div>
+      <div class="feedbacks">
+        <a href="feedbacks.html">Ver Mais<i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </section>
+
+    <section class="newsletter" aria-labelledby="titulo-newsletter">
+      <h2 id="titulo-newsletter">Subscreva a nossa Newsletter</h2>
+      <p><i class="fa-solid fa-envelope"></i> Receba as melhores ofertas e novidades diretamente no seu email.</p>
+      <form id="form-newsletter" aria-label="Formulário de Newsletter">
+        <label for="newsletter-email" class="visually-hidden">Email</label>
+        <input type="email" id="newsletter-email" placeholder="Digite o seu email" required />
+        <button type="submit"><i class="fa-solid fa-paper-plane"></i> Subscrever</button>
+      </form>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contacto.html">Contactos</a></li>
+          <li><a href="faq.html">Perguntas Frequentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Siga-nos</h3>
+        <div class="social-links">
+          <a href="https://facebook.com" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com" aria-label="Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://instagram.com" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Contactos</h3>
+        <p><i class="fa-solid fa-envelope"></i> Email: info@flyscape.pt</p>
+        <p><i class="fa-solid fa-phone"></i> Telefone: +351 123 456 789</p>
+        <p><i class="fa-solid fa-map-marker-alt"></i> Morada: Departamento de Economia, Gestão e Engenharia Industrial, Aveiro</p>
+      </div>
+    </div>
+    <hr>
+    <div class="footer-bottom">
+      <p>FlyScape — Your escape starts in the sky <i class="fa-solid fa-plane"></i></p>
+      <p><i class="fa-solid fa-copyright"></i> 2025 FlyScape. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="js/script_index.js"></script>
+  <script src="js/script_nomeheader.js"></script>
+  <script src="js/script_contador_carrinho.js"></script>
+  <script src="https://cdn.botpress.cloud/webchat/v2.5/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/05/20/17/20250520174136-28IOYRUB.js"></script>
+  
+</body>
+</html>

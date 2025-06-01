@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="media/logo.png" />
+  <title>Carrinho | FlyScape</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style_global.css" />
+  <link rel="stylesheet" href="css/style_carrinho.css" />
+</head>
+
+<body>
+  <header class="unified-header" role="banner">
+    <a href="index.html" class="header-left-link">
+      <div class="header-left">
+        <img src="media/logo.png" alt="Logótipo da FlyScape" />
+        <span class="site-name">FlyScape | Your escape starts in the sky</span>
+      </div>
+    </a>
+    <nav class="header-right" aria-label="Menu de Utilizador">
+      <a href="sobre.html"><i class="fa-solid fa-info-circle"></i> Sobre Nós</a>
+      <a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a>
+      <a href="perfil.html"><i class="fa-solid fa-user"></i> <span id="user-display-name">Área de Cliente</span></a>
+      <a href="carrinho.html" class="active" aria-label="Carrinho" aria-current="page"><i class="fa-solid fa-cart-shopping"></i> <span class="carrinho-contador">0</span></a>
+    </nav>
+  </header>
+
+  <nav class="nav-blue" role="navigation" aria-label="Menu Principal">
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+      <li><a href="voos.html"><i class="fa-solid fa-plane"></i> Voos</a></li>
+      <li><a href="hotel.html"><i class="fa-solid fa-hotel"></i> Hotéis</a></li>
+      <li><a href="pacotes.html"><i class="fa-solid fa-gift"></i> Pacotes</a></li>
+      <li><a href="promocoes.html"><i class="fa-solid fa-tags"></i> Promoções</a></li>
+    </ul>
+  </nav>
+
+  <main class="carrinho-container">
+    <h1><i class="fa-solid fa-cart-shopping"></i> Seu Carrinho</h1>
+    <div class="conteudo-carrinho">
+      <div class="itens-carrinho" id="itens-carrinho">
+        <!-- Os itens serão inseridos aqui dinamicamente via JavaScript -->
+      </div>
+      <div class="resumo-carrinho">
+        <h2><i class="fa-solid fa-receipt"></i> Resumo do Pedido</h2>
+        <div class="cupom-container">
+          <div class="cupom-input-group">
+            <input type="text" placeholder="Código promocional" class="input-cupao" id="input-cupao" />
+            <button class="btn-aplicar-cupom" onclick="aplicarCupom()">
+              <i class="fa-solid fa-tag"></i>
+              Aplicar
+            </button>
+          </div>
+          <div class="cupom-mensagem" id="cupom-mensagem"></div>
+        </div>
+        <div class="valores">
+          <p>Subtotal (IVA incluído) <span id="subtotal">€0,00</span></p>
+          <p>Desconto <span id="desconto">-€0,00</span></p>
+          <p><strong>Total <span id="total">€0,00</span></strong></p>
+        </div>
+        <button class="btn-checkout">
+          <i class="fa-solid fa-lock"></i>
+          Finalizar Compra
+        </button>
+        <div class="pagamento-seguro">
+          <i class="fa-solid fa-shield-halved"></i>
+          <small>Pagamento 100% seguro</small>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contacto.html">Contactos</a></li>
+          <li><a href="faq.html">Perguntas Frequentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Siga-nos</h3>
+        <div class="social-links">
+          <a href="https://facebook.com" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com" aria-label="Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://instagram.com" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Contactos</h3>
+        <p><i class="fa-solid fa-envelope"></i> Email: info@flyscape.pt</p>
+        <p><i class="fa-solid fa-phone"></i> Telefone: +351 123 456 789</p>
+        <p><i class="fa-solid fa-map-marker-alt"></i> Morada: Departamento de Economia, Gestão e Engenharia Industrial, Aveiro</p>
+      </div>
+    </div>
+    <hr>
+    <div class="footer-bottom">
+      <p>FlyScape — Your escape starts in the sky <i class="fa-solid fa-plane"></i></p>
+      <p><i class="fa-solid fa-copyright"></i> 2025 FlyScape. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script_carrinho.js"></script>
+  <script src="js/script_nomeheader.js"></script>
+  <script src="js/script_contador_carrinho.js"></script>
+  <script src="https://cdn.botpress.cloud/webchat/v2.5/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/05/20/17/20250520174136-28IOYRUB.js"></script>
+</body>
+</html>

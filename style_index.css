@@ -1,0 +1,1170 @@
+/* Cabeçalho */
+.unified-header {
+  background-color: transparent;
+}
+
+/* Hero Section */
+.hero.hero-centered {
+  height: 100vh;
+  min-height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: slideAnimation 15000ms infinite;
+}
+.carousel-slide img:nth-child(1) {
+  animation-delay: 0ms;
+  opacity: 1;
+}
+.carousel-slide img:nth-child(2) {
+  animation-delay: 5000ms;
+}
+.carousel-slide img:nth-child(3) {
+  animation-delay: 10000ms;
+}
+@keyframes slideAnimation {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  33% { opacity: 1; }
+  43% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: -1;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+.hero-inner h1 {
+  font-size: 48px;
+  margin-bottom: 16px;
+  color: #fff;
+}
+.hero-inner p {
+  font-size: 19px;
+  margin-bottom: 32px;
+  color: #fff;
+}
+
+/* Estilos do formulário de busca */
+.search-container {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 99999;
+  min-height: 200px;
+  overflow: visible;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+  margin-bottom: 24px;
+  padding: 0;
+}
+.tab {
+  background: #f1f5f9;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  color: #1f2937;
+  transition: all 0.3s ease;
+}
+.tab:hover {
+  background: #dbeafe;
+  color: #1e40af;
+}
+.tab.active {
+  background: #0056b3;
+  color: #fff;
+}
+
+.tab-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+}
+.form {
+  display: none;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-end;
+}
+.form.active {
+  display: flex;
+}
+#voo-form.form {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.form-col {
+  flex: 1;
+  min-width: 120px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+#voo-form .form-col {
+  width: 17%;
+  min-width: 100px;
+}
+#voo-form .form-col label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 2px; /* Reduzido para minimizar impacto no alinhamento */
+}
+#voo-form .form-col label i {
+  margin-right: 6px;
+  font-size: 16px;
+}
+
+#voo-form .form-col .dropdown-btn {
+  width: 100%;
+  height: 40px; /* Altura fixa para uniformizar */
+  padding: 0 12px; /* Ajustado para centralizar o texto */
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease;
+  display: flex;
+  align-items: center; /* Centraliza o texto verticalmente */
+  box-sizing: border-box;
+}
+#voo-form .form-col input:focus,
+#voo-form .form-col .dropdown-btn:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 0 2px rgba(0,86,179,0.15);
+}
+#voo-form .form-col input:invalid:focus {
+  border-color: #dc2626;
+}
+.btn-col {
+  flex: 0 0 auto;
+}
+#voo-form .btn-col {
+  width: 10%;
+  min-width: 80px;
+  height: 20px
+}
+#voo-form .btn-col button {
+  background: #0056b3;
+  color: #fff;
+  padding: 0 0px; /* Ajustado para centralizar */
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  height: 40px; /* Mesma altura que os outros elementos */
+  justify-content: center;
+  box-sizing: border-box;
+}
+#voo-form .btn-col button:hover {
+  background: #003d80;
+  
+}
+#voo-form .btn-col button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,86,179,0.3);
+}
+
+/* Estilos para o dropdown de passageiros (formulário de voos) */
+.passengers-group {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-3px);
+  z-index: 99999;
+}
+#voo-form .passengers-group {
+  width: 100%;
+  min-width: 120px;
+}
+#voo-form .passengers-group label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 2px; /* Reduzido para minimizar impacto no alinhamento */
+}
+#voo-form .dropdown-btn {
+  align-items: center;
+  background: #fff;
+  cursor: pointer;
+  text-align: left;
+  color: #1f2937;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease;
+  height: 40px; /* Mesma altura que os outros elementos */
+  box-sizing: border-box;
+}
+#voo-form .dropdown-btn:hover {
+  border-color: #b0b0b0;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  background-color: #fff;
+  min-width: 250px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 999999;
+}
+.dropdown-content .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.dropdown-content .row span {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1f2937;
+}
+.dropdown-content .row span small {
+  font-size: 11px;
+  color: #6b7280;
+}
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.counter button {
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+  border: none;
+  border-radius: 50%;
+  background: #f0f0f0;
+  cursor: pointer;
+  color: #374151;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.counter button:hover {
+  background: #e0e0e0;
+}
+.counter button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,86,179,0.2);
+}
+.counter span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+  min-width: 16px;
+  text-align: center;
+}
+.confirm-btn {
+  width: 100%;
+  padding: 8px;
+  background-color: #0056b3;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.confirm-btn:hover {
+  background: #003d80;
+  transform: translateY(-1px);
+}
+.confirm-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,86,179,0.3);
+}
+.info {
+  font-size: 11px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* Dropdown personalizado de seleção de pessoas (hotéis e voo+hotel) */
+.pessoas-dropdown-container {
+  position: relative;
+  width: 100%;
+}
+.pessoas-btn {
+  width: 100%;
+  padding: 0 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fff;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease;
+  height: 40px;
+  box-sizing: border-box;
+}
+.pessoas-btn:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 0 2px rgba(0,86,179,0.15);
+}
+.pessoas-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-width: 300px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 12px;
+  margin-top: 4px;
+  z-index: 30;
+  animation: slideDown 0.3s ease;
+}
+.pessoas-menu.hidden {
+  display: none;
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.pessoas-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.pessoas-item span {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1f2937;
+}
+.pessoas-item small {
+  font-size: 11px;
+  color: #6b7280;
+}
+.contador {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.contador button {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: #f0f0f0;
+  border-radius: 50%;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.contador button:hover {
+  background: #e0e0e0;
+}
+.contador button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,86,179,0.2);
+}
+.contador button:disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+.contador span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+  min-width: 16px;
+  text-align: center;
+}
+.btn-concluir {
+  width: 100%;
+  background: #0056b3;
+  color: #fff;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn-concluir:hover {
+  background: #003d80;
+  transform: translateY(-1px);
+}
+.btn-concluir:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,86,179,0.3);
+}
+
+/* Secções específicas da home */
+.destaques, .why-travel, .reviews {
+  padding: 30px 2%;
+  text-align: center;
+}
+.destaques h2, .why-travel h2, .reviews h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+/* Cards */
+.cards, .why-travel-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px 0;
+}
+.card, .why-card {
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  background: #fff;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover, .why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.15);
+}
+.card h3, .why-card h3 {
+  font-size: 24px;
+  margin: 15px 0 10px;
+  color: #1f2937;
+}
+.card p, .why-card p {
+  padding: 0 15px 15px;
+  color: #666;
+}
+.why-card i {
+  font-size: 40px;
+  color: #0056b3;
+  margin-bottom: 15px;
+}
+
+/* Reviews Carousel */
+.carousel {
+  flex-wrap: nowrap;
+  justify-content: center;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+}
+.review {
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  flex: 0 0 auto;
+  text-align: center;
+}
+.review-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 15px;
+  border: 2px solid #e5e7eb;
+}
+.review p {
+  font-size: 16px;
+  color: #1f2937;
+  margin-bottom: 15px;
+}
+.stars {
+  margin-bottom: 10px;
+}
+.stars i {
+  color: #facc15;
+  font-size: 18px;
+}
+.stars i.fa-regular {
+  color: #d1d5db;
+}
+.review .autor {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #6b7280;
+  text-align: center;
+  background: none;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .hero.hero-centered {
+    height: auto;
+    padding: 20px 1%;
+  }
+  .hero-inner h1 {
+    font-size: 40px;
+  }
+  .form-col {
+    min-width: 100%;
+  }
+  #voo-form.form {
+    flex-wrap: wrap;
+  }
+  #voo-form .form-col,
+  #voo-form .passengers-group {
+    width: 100%;
+    min-width: 100%;
+  }
+  #voo-form .btn-col {
+    width: 100%;
+    min-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .form {
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  .form-col,
+  .passengers-group {
+    min-width: 100%;
+    margin-bottom: 10px;
+  }
+  .dropdown-content {
+    min-width: 100%;
+    left: 0;
+    right: 0;
+  }
+}
+@media (max-width: 576px) {
+  .nav-blue ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero-inner h1 {
+    font-size: 32px;
+  }
+  .hero-inner p {
+    font-size: 16px;
+  }
+  .tabs {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  .pessoas-menu {
+    max-width: 100%;
+  }
+  .search-container {
+    padding: 16px;
+  }
+  .tab-content {
+    padding: 16px;
+  }
+  .destaques h2, .why-travel h2, .reviews h2, .newsletter h2 {
+    font-size: 28px;
+  }
+  .card, .why-card, .review {
+    width: 100%;
+    max-width: 300px;
+  }
+  .carousel {
+    flex-wrap: nowrap;
+  }
+}
+
+.destinos {
+  text-align: center;
+  margin-top: 30px;
+}
+.destinos a {
+  font-size: 18px;
+  color: #0056b3;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.destinos a i {
+  margin-left: 8px;
+}
+.destinos a:hover {
+  color: #003d80;
+}
+
+.feedbacks {
+  text-align: center;
+  margin-top: 30px;
+}
+.feedbacks a {
+  font-size: 18px;
+  color: #0056b3;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.feedbacks a i {
+  margin-left: 8px;
+}
+.feedbacks a:hover {
+  color: #003d80;
+}
+#hotel-form {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  position: relative;
+  z-index: 99999;
+  overflow: visible;
+}
+
+#hotel-form .form-col {
+  width: 20%;
+  min-width: 100px;
+}
+
+#hotel-form .passengers-group {
+  width: 20%;
+  min-width: 120px;
+  position: relative;
+  z-index: 6000;
+  transform: translateY(-3px);
+}
+
+#hotel-form .btn-col {
+  width: 10%;
+  min-width: 80px;
+}
+
+#hotel-form .form-col label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 2px;
+}
+
+#hotel-form .form-col label i {
+  margin-right: 6px;
+  font-size: 16px;
+}
+
+
+#hotel-form .form-col .dropdown-btn {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+#hotel-form .form-col input:focus,
+#hotel-form .form-col .dropdown-btn:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 0 2px rgba(0, 86, 179, 0.15);
+}
+
+#hotel-form .form-col input:invalid:focus {
+  border-color: #dc2626;
+}
+
+#hotel-form .btn-col button {
+  background: #0056b3;
+  color: #fff;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  height: 40px;
+  justify-content: center;
+  box-sizing: border-box;
+  transform: translateY(10px);
+}
+
+#hotel-form .btn-col button:hover {
+  background: #003d80;
+}
+
+#hotel-form .btn-col button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 86, 179, 0.3);
+}
+
+#hotel-form .child-age-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+#hotel-form .child-age-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+#hotel-form .child-age {
+  width: 100px;
+  padding: 6px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 13px;
+  background: #fff;
+  cursor: pointer;
+}
+
+#hotel-form #hotel-childAges label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+  display: block;
+}
+
+#hotel-form .dropdown-content {
+  min-width: 250px;
+  z-index: 999999;
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  #hotel-form .child-age-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #hotel-form .child-age {
+    width: 100%;
+  }
+
+  #hotel-form .dropdown-content {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+}
+
+.search-container,
+.tab-content,
+.form {
+  position: relative;
+  z-index: 6000;
+  overflow: visible;
+}
+
+.destinations,
+.featured-destinations,
+#destinations,
+#featured-destinations,
+section:not(#hotel-form) {
+  position: relative;
+  z-index: 1;
+}
+#voo-hotel-form.form {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+#voo-hotel-form .form-col {
+  width: 17%;
+  min-width: 100px;
+}
+#voo-hotel-form .passengers-group {
+  width: 100%;
+  min-width: 120px;
+}
+#voo-hotel-form .btn-col {
+  width: 10%;
+  min-width: 80px;
+}
+#voo-hotel-form .btn-col button {
+  height: 40px; /* Mesma altura que os outros elementos */
+  padding: 0 12px; /* Centralizar o texto */
+  justify-content: center;
+}
+#voo-hotel-form .form-col label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600; /* Aqui está o negrito */
+  color: #1f2937;
+  margin-bottom: 2px;
+}
+#voo-hotel-form .form-col label i {
+  margin-right: 6px; /* Mesmo espaçamento que na aba Voos */
+  font-size: 16px;
+}
+/* Estilo geral para o dropdown-btn em todas as abas */
+#voo-hotel-form .form-col .dropdown-btn {
+  width: 100%;
+  height: 40px; /* Altura fixa para uniformizar */
+  padding: 0 12px; /* Ajustado para centralizar o texto */
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease;
+  display: flex;
+  align-items: center; /* Centraliza o texto verticalmente */
+  box-sizing: border-box;
+  cursor: pointer;
+}
+#voo-hotel-form .dropdown-btn:hover {
+  border-color: #b0b0b0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Mantém a sombra no hover */
+}
+
+#voo-hotel-form .dropdown-btn:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 0 2px rgba(0, 86, 179, 0.15); /* Sombra de foco */
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  min-width: 220px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  margin-top: 4px;
+}
+#voo-hotel-form .btn-col {
+  width: 10%;
+  min-width: 80px;
+  height: 20px
+}
+#voo-hotel-form .btn-col button {
+  background: #0056b3;
+  color: #fff;
+  padding: 0 0px; /* Ajustado para centralizar */
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  height: 40px; /* Mesma altura que os outros elementos */
+  justify-content: center;
+  box-sizing: border-box;
+}
+#voo-hotel-form .btn-col button:hover {
+  background: #003d80;
+  
+}
+#voo-hotel-form .btn-col button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,86,179,0.3);
+}
+/* Autocomplete */
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
+
+.autocomplete-active {
+  background-color: #005b96 !important;
+  color: #fff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .form-row {
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+}
+
+/* Estilo para datas desativadas no calendário (cinzento) */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+/* Estilo para desativar datas passadas (pode variar conforme o navegador) */
+input[type="date"] {
+  position: relative;
+}
+
+/* Garantir que o input tenha um estilo consistente */
+input[type="date"]:invalid {
+  border-color: #ccc;
+}
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+}
+
+.ofertas {
+  padding: 30px 2%;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+
+.ofertas h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #1f2937;
+}
+
+.ofertas .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 15px 0;
+}
+
+.ofertas .card {
+  width: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.ofertas .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.ofertas .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.ofertas .card-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.ofertas .discount-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #ff4d4f;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.ofertas .card h3 {
+  font-size: 24px;
+  margin: 0 0 10px;
+  color: #1f2937;
+  text-align: center;
+  width: 100%;
+}
+
+.ofertas .description {
+  color: #6b7280;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.ofertas .price-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.ofertas .original-price {
+  color: #9ca3af;
+  text-decoration: line-through;
+  font-size: 0.9rem;
+}
+
+.ofertas .current-price {
+  color: #0056b3;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.ofertas .ver-oferta {
+  display: inline-block;
+  color: #0056b3;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.ofertas .ver-oferta i {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.ofertas .ver-oferta:hover {
+  color: #003d80;
+}
+
+.ofertas .ver-oferta:hover i {
+  transform: translateX(5px);
+}
+
+.ofertas .ver-mais-ofertas {
+  margin-top: 30px;
+}
+
+.ofertas .ver-mais-ofertas a {
+  display: inline-flex;
+  align-items: center;
+  color: #0056b3;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.ofertas .ver-mais-ofertas a i {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.ofertas .ver-mais-ofertas a:hover {
+  color: #003d80;
+}
+
+.ofertas .ver-mais-ofertas a:hover i {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .ofertas .card {
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  .ofertas .cards {
+    gap: 20px;
+  }
+}

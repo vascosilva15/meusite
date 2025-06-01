@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="media/logo.png" />
+  <title>Perfil | FlyScape</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style_global.css" />
+  <link rel="stylesheet" href="css/style_perfil.css" />
+</head>
+<body>
+  <header class="unified-header transparent" role="banner">
+    <a href="index.html" class="header-left-link">
+      <div class="header-left">
+        <img src="media/logo.png" alt="Logótipo da FlyScape" loading="lazy" />
+        <span class="site-name">FlyScape | Your escape starts in the sky</span>
+      </div>
+    </a>
+    <nav class="header-right" aria-label="Menu de Utilizador">
+      <a href="sobre.html"><i class="fa-solid fa-info-circle"></i> Sobre Nós</a>
+      <a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a>
+      <a href="perfil.html" class="active" aria-current="page"><i class="fa-solid fa-user"></i> <span id="user-display-name">Área de Cliente</span></a>
+      <a href="carrinho.html" aria-label="Carrinho"><i class="fa-solid fa-cart-shopping"></i> <span class="carrinho-contador">0</span></a>
+    </nav>
+  </header>
+
+  <nav class="nav-blue" role="navigation" aria-label="Menu Principal">
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+      <li><a href="voos.html"><i class="fa-solid fa-plane"></i> Voos</a></li>
+      <li><a href="hotel.html"><i class="fa-solid fa-hotel"></i> Hotéis</a></li>
+      <li><a href="pacotes.html"><i class="fa-solid fa-gift"></i> Pacotes</a></li>
+      <li><a href="promocoes.html"><i class="fa-solid fa-tags"></i> Promoções</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <aside class="sidebar" role="navigation">
+      <div class="sidebar-header">
+        <h3 id="user-name">Utilizador</h3>
+      </div>
+      <nav class="sidebar-nav" aria-label="Menu de navegação do perfil">
+        <div class="sidebar-group">
+          <h4 class="group-title open" data-group="conta"><i class="fa-solid fa-user"></i> A sua Conta</h4>
+          <div class="group-content open" data-content="conta">
+            <a href="#personal-data" class="tab-link active" data-tab="personal-data"><i class="fa-solid fa-id-card"></i> Dados Pessoais</a>
+            <a href="#passengers" class="tab-link" data-tab="passengers"><i class="fa-solid fa-users"></i> Passageiros</a>
+            <a href="#faturacao" class="tab-link" data-tab="faturacao"><i class="fa-solid fa-file-invoice"></i> Dados para Faturação</a>
+          </div>
+        </div>
+        <div class="sidebar-group">
+          <h4 class="group-title" data-group="reservas"><i class="fa-solid fa-plane"></i> As suas Reservas</h4>
+          <div class="group-content" data-content="reservas">
+            <a href="#upcoming-trips" class="tab-link" data-tab="upcoming-trips"><i class="fa-solid fa-plane-departure"></i> Próximas Viagens</a>
+            <a href="#past-trips" class="tab-link" data-tab="past-trips"><i class="fa-solid fa-plane-arrival"></i> Viagens Realizadas</a>
+          </div>
+        </div>
+        <div class="sidebar-group">
+          <h4 class="group-title no-collapse tab-link" data-tab="favorites"><i class="fa-solid fa-heart"></i> Favoritos</h4>
+        </div>
+      </nav>
+      <button class="btn btn-logout" data-action="logout" aria-label="Sair da conta"><i class="fa-solid fa-sign-out-alt"></i> Sair</button>
+    </aside>
+
+    <main class="main" role="main">
+      <section id="personal-data" class="tab-pane active" role="region" aria-labelledby="personal-data-heading">
+        <div class="card enhanced-card">
+          <div class="card-header">
+            <h2 id="personal-data-heading">Dados Pessoais</h2>
+          </div>
+          <form id="personal-data-form" class="form enhanced-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Insira o seu nome" required />
+                <span class="error-message" style="display: none; color: #ef4444;">Nome é obrigatório</span>
+              </div>
+              <div class="form-group">
+                <label for="apelido">Apelido</label>
+                <input type="text" id="apelido" name="apelido" placeholder="Insira o seu apelido" />
+                <span class="error-message" style="display: none; color: #ef4444;">Apelido é obrigatório</span>
+              </div>
+              <div class="form-group">
+                <label for="data-nascimento">Data de Nascimento</label>
+                <input type="date" id="data-nascimento" name="data-nascimento" class="date-input" />
+                <span class="error-message" style="display: none; color: #ef4444;">Data deve ser no passado</span>
+              </div>
+              <div class="form-group-inline email-telefone-localidade">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="Ex.: ntmfira123@hotmail.com" pattern="[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required />
+                  <span class="error-message" style="display: none; color: #ef4444;">Email inválido</span>
+                </div>
+                <div class="form-group">
+                  <label for="telefone">Telefone (Opcional)</label>
+                  <input type="text" id="telefone" name="telefone" placeholder="Insira o seu telefone" />
+                </div>
+                <div class="form-group">
+                  <label for="localidade">Localidade</label>
+                  <input type="text" id="localidade" name="localidade" placeholder="Insira a sua localidade" />
+                </div>
+              </div>
+              <div class="form-group-inline">
+                <div class="form-group">
+                  <label for="morada">Morada</label>
+                  <input type="text" id="morada" name="morada" placeholder="Insira a sua morada" />
+                </div>
+                <div class="form-group">
+                  <label for="codigo-postal">Código Postal</label>
+                  <input type="text" id="codigo-postal" name="codigo-postal" placeholder="Ex.: 3300-123" maxlength="8" />
+                  <span class="error-message" style="display: none; color: #ef4444;">Formato: 3300-123</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="nif">NIF</label>
+                <input type="text" id="nif" name="nif" placeholder="Ex.: 123456789" maxlength="9" required/>
+                <span class="error-message" style="display: none; color: #ef4444;">NIF deve ter 9 dígitos</span>
+              </div>
+              <div class="form-group">
+                <label for="cc">Número de CC</label>
+                <input type="text" id="cc" name="cc" placeholder="Ex.: 12345678" maxlength="8" />
+                <span class="error-message" style="display: none; color: #ef4444;">Número de Cartão de Cidadão deve ter 8 dígitos</span>
+              </div>
+              <div class="form-group">
+                <label for="passaporte">Número de Passaporte</label>
+                <input type="text" id="passaporte" name="passaporte" placeholder="Ex.: AB123456" maxlength="9" pattern="[A-Z]{2}[0-9]{6}"/>
+                <span class="error-message" style="display: none; color: #ef4444;">Passaporte inválido</span>
+              </div>
+            </div>
+            <hr class="section-divider" />
+            <div class="password-section">
+              <h2 class="password-title">Alteração de Password</h2>
+              <div class="password-grid">
+                <div class="form-group password-group">
+                  <label for="current-password">Password Atual</label>
+                  <div class="password-wrapper">
+                    <input type="password" id="current-password" name="current-password" placeholder="Password atual" value="" />
+                    <button type="button" class="toggle-password" aria-label="Mostrar ou ocultar Password">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                    <span class="error-message" style="display: none; color: #ef4444;">Password incorreta</span>
+                  </div>
+                </div>
+                <div class="form-group password-group">
+                  <label for="new-password">Nova Password</label>
+                  <div class="password-wrapper">
+                    <input type="password" id="new-password" name="new-password" placeholder="Nova Password" />
+                    <button type="button" class="toggle-password" aria-label="Mostrar ou ocultar Password">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                    <span class="error-message" style="display: none; color: #ef4444;">Mínimo 6 caracteres</span>
+                  </div>
+                </div>
+                <div class="form-group password-group">
+                  <label for="confirm-password">Confirmar Nova Password</label>
+                  <div class="password-wrapper">
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmar Password" />
+                    <button type="button" class="toggle-password" aria-label="Mostrar ou ocultar Password">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                    <span class="error-message" style="display: none; color: #ef4444;">Passwords não coincidem</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn btn-secondary">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Guardar <span class="loading-spinner" style="display: none;"></span></button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="passengers" class="tab-pane" role="region" aria-labelledby="passengers-heading">
+        <div class="card">
+          <div class="card-header">
+            <h2 id="passengers-heading">Passageiros</h2>
+          </div>
+          <div class="passenger-list" id="passenger-list">
+            <div class="passenger-table">
+              <div class="passenger-table-header">
+                <span>Título</span>
+                <span>Nome</span>
+                <span>Apelido</span>
+                <span>Data de Nascimento</span>
+                <span>Email</span>
+                <span>Ações</span>
+              </div>
+              <div class="passenger-table-body" id="passenger-table-body" aria-live="polite"></div>
+            </div>
+          </div>
+          <div class="passenger-actions enhanced-passenger-actions">
+            <button class="btn btn-primary add-passenger-btn" data-action="add-passenger">Adicionar Passageiro</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="faturacao" class="tab-pane" role="region" aria-labelledby="faturacao-heading">
+        <div class="card enhanced-card">
+          <div class="card-header">
+            <h2 id="faturacao-heading">Dados para Faturação</h2>
+          </div>
+          <form id="faturacao-form" class="form enhanced-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="nome-faturacao">Nome</label>
+                <input type="text" id="nome-faturacao" name="nome-faturacao" placeholder="Insira o seu nome" required/>
+                <span class="error-message" style="display: none; color: #ef4444;">Nome é obrigatório</span>
+              </div>
+              <div class="form-group">
+                <label for="email-faturacao">Email de Faturação</label>
+                <input type="email" id="email-faturacao" name="email-faturacao" placeholder="exemplo@email.com" required/>
+                <span class="error-message" style="display: none; color: #ef4444;">Email inválido</span>
+              </div>
+              <div class="form-group">
+                <label for="telefone-faturacao">Telefone</label>
+                <input type="tel" id="telefone-faturacao" name="telefone-faturacao" placeholder="Insira o seu número de telefone" />
+              </div>
+              <div class="form-group">
+                <label for="morada-faturacao">Morada</label>
+                <input type="text" id="morada-faturacao" name="morada-faturacao" placeholder="Insira a morada de faturação" required/>
+              </div>
+              <div class="form-group">
+                <label for="codigo-postal-faturacao">Código Postal</label>
+                <input type="text" id="codigo-postal-faturacao" name="codigo-postal-faturacao" placeholder="Ex.: 3300-123" maxlength="8" required/>
+                <span class="error-message" style="display: none; color: #ef4444;">Formato: 3300-123</span>
+              </div>
+              <div class="form-group">
+                <label for="localidade-faturacao">Localidade</label>
+                <input type="text" id="localidade-faturacao" name="localidade-faturacao" placeholder="Insira a localidade" />
+              </div>
+              <div class="form-group">
+                <label for="nif-faturacao">NIF</label>
+                <input type="text" id="nif-faturacao" name="nif-faturacao" placeholder="Ex.: 123456789" maxlength="9" required/>
+                <span class="error-message" style="display: none; color: #ef4444;">NIF deve ter 9 dígitos</span>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn btn-secondary">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Guardar <span class="loading-spinner" style="display: none;"></span></button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="upcoming-trips" class="tab-pane" role="region" aria-labelledby="upcoming-trips-heading">
+        <div class="card">
+          <div class="card-header">
+            <h2 id="upcoming-trips-heading">Próximas Viagens</h2>
+          </div>
+          <div id="upcoming-trips-list" class="trip-list">
+            <p>Nenhuma viagem encontrada. <a href="index.html">Planeie a sua próxima aventura!</a></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="past-trips" class="tab-pane" role="region" aria-labelledby="past-trips-heading">
+        <div class="card">
+          <div class="card-header">
+            <h2 id="past-trips-heading">Viagens Realizadas</h2>
+          </div>
+          <div id="past-trips-list" class="trip-list">
+            <p>Nenhuma viagem realizada encontrada. <a href="index.html">Comece a explorar hoje!</a></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="favorites" class="tab-pane" role="region" aria-labelledby="favorites-heading">
+        <div class="card">
+          <div class="card-header">
+            <h2 id="favorites-heading">Favoritos</h2>
+          </div>
+          <div class="favorites-container">
+            <div class="favorites-section">
+              <h3><i class="fa-solid fa-plane"></i> Voos Favoritos</h3>
+              <div id="flight-favorites" class="favorites-list">
+                <!-- JavaScript will populate flight favorites here -->
+              </div>
+            </div>
+            <div class="favorites-section">
+              <h3><i class="fa-solid fa-hotel"></i> Hotéis Favoritos</h3>
+              <div id="hotel-favorites" class="favorites-list">
+                <!-- JavaScript will populate hotel favorites here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contacto.html">Contactos</a></li>
+          <li><a href="faq.html">Perguntas Frequentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Siga-nos</h3>
+        <div class="social-links">
+          <a href="https://facebook.com" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com" aria-label="Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://instagram.com" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Contactos</h3>
+        <p><i class="fa-solid fa-envelope"></i> Email: info@flyscape.pt</p>
+        <p><i class="fa-solid fa-phone"></i> Telefone: +351 123 456 789</p>
+        <p><i class="fa-solid fa-map-marker-alt"></i> Morada: Departamento de Economia, Gestão e Engenharia Industrial, Aveiro</p>
+      </div>
+    </div>
+    <hr>
+    <div class="footer-bottom">
+      <p>FlyScape — Your escape starts in the sky <i class="fa-solid fa-plane"></i></p>
+      <p><i class="fa-solid fa-copyright"></i> 2025 FlyScape. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/script_perfil.js" defer></script>
+  <script src="js/script_nomeheader.js" defer></script>
+  <script src="js/script_contador_carrinho.js" defer></script>
+  <script src="https://cdn.botpress.cloud/webchat/v2.5/inject.js" defer></script>
+  <script src="https://files.bpcontent.cloud/2025/05/20/17/20250520174136-28IOYRUB.js" defer></script>
+</body>
+</html>

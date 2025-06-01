@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="media/logo.png" />
+  <title>Finalizar Compra | FlyScape</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style_global.css" />
+  <link rel="stylesheet" href="css/style_checkout.css" />
+</head>
+<body>
+  <header class="unified-header transparent" role="banner">
+    <a href="index.html" class="header-left-link">
+      <div class="header-left">
+        <img src="media/logo.png" alt="Logótipo da Agência" />
+        <span class="site-name">FlyScape | Your escape starts in the sky</span>
+      </div>
+    </a>
+    <nav class="header-right" aria-label="Menu de Utilizador">
+      <a href="sobre.html"><i class="fa-solid fa-info-circle"></i> Sobre Nós</a>
+      <a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a>
+      <a href="perfil.html"><i class="fa-solid fa-user"></i> <span id="user-display-name">Área de Cliente</span></a>
+      <a href="carrinho.html" aria-label="Carrinho"><i class="fa-solid fa-cart-shopping"></i> <span class="carrinho-contador">0</span></a>
+    </nav>
+  </header>
+
+  <nav class="nav-blue" role="navigation" aria-label="Menu Principal">
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+      <li><a href="voos.html"><i class="fa-solid fa-plane"></i> Voos</a></li>
+      <li><a href="hotel.html"><i class="fa-solid fa-hotel"></i> Hotéis</a></li>
+      <li><a href="pacotes.html"><i class="fa-solid fa-gift"></i> Pacotes</a></li>
+      <li><a href="promocoes.html"><i class="fa-solid fa-tags"></i> Promoções</a></li>
+    </ul>
+  </nav>
+
+  <main class="checkout-container">
+    <div class="checkout-content">
+      <!-- Resumo do Pedido -->
+      <section class="order-summary">
+        <h2>Resumo do Pedido</h2>
+        <div id="items-list" class="items-list">
+          <!-- Items serão inseridos aqui via JavaScript -->
+        </div>
+        <div class="order-totals">
+          <div class="total-line">
+            <span>Subtotal:</span>
+            <span id="subtotal">€0,00</span>
+          </div>
+          <div class="total-line">
+            <span>Desconto:</span>
+            <span id="desconto">€0,00</span>
+          </div>
+          <div class="total-line total">
+            <span>Total:</span>
+            <span id="total">€0,00</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Formulário de Pagamento -->
+      <section class="payment-section">
+        <h2>Método de Pagamento</h2>
+        <form id="payment-form" novalidate>
+          <div class="payment-methods">
+            <div class="payment-method">
+              <input type="radio" id="card-payment" name="payment-method" value="card" checked>
+              <label for="card-payment">
+                <i class="fa-solid fa-credit-card"></i>
+                <span>Cartão de Crédito/Débito</span>
+                <div class="card-brands">
+                  <i class="fa-brands fa-cc-visa"></i>
+                  <i class="fa-brands fa-cc-mastercard"></i>
+                  <i class="fa-brands fa-cc-amex"></i>
+                </div>
+              </label>
+            </div>
+
+            <div class="payment-method">
+              <input type="radio" id="mbway-payment" name="payment-method" value="mbway">
+              <label for="mbway-payment">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <span>MB WAY</span>
+              </label>
+            </div>
+
+            <div class="payment-method">
+              <input type="radio" id="paypal-payment" name="payment-method" value="paypal">
+              <label for="paypal-payment">
+                <i class="fa-brands fa-paypal"></i>
+                <span>PayPal</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Formulário Cartão -->
+          <div id="card-form" class="payment-details">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="card-number">Número do Cartão</label>
+                <div class="input-wrapper">
+                  <input type="text" id="card-number" inputmode="numeric" autocomplete="cc-number" placeholder="1234 5678 9012 3456" required>
+                  <span class="card-type-icon"></span>
+                </div>
+                <div class="error-message"></div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="card-name">Nome no Cartão</label>
+                <input type="text" id="card-name" autocomplete="cc-name" placeholder="Nome como aparece no cartão" required>
+                <div class="error-message"></div>
+              </div>
+            </div>
+
+            <div class="form-row two-cols">
+              <div class="form-group">
+                <label for="card-expiry">Data de Validade</label>
+                <input type="text" id="card-expiry" inputmode="numeric" placeholder="MM/AA" autocomplete="cc-exp" required>
+                <div class="error-message"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="card-cvc">CVV/CVC</label>
+                <input type="text" id="card-cvc" inputmode="numeric" placeholder="123" autocomplete="cc-csc" required>
+                <div class="error-message"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulário MB WAY -->
+          <div id="mbway-form" class="payment-details" style="display: none;">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone-number">Número de Telemóvel</label>
+                <div class="input-wrapper phone-wrapper">
+                  <span class="prefix">+351</span>
+                  <input type="tel" id="phone-number" inputmode="numeric" placeholder="912 345 678" required>
+                </div>
+                <div class="error-message"></div>
+                <small class="helper-text">Apenas números portugueses (começados por 91, 92, 93 ou 96)</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulário PayPal -->
+          <div id="paypal-form" class="payment-details" style="display: none;">
+            <div class="paypal-message">
+              <i class="fa-brands fa-paypal"></i>
+              <p>Será redirecionado para o PayPal para concluir o seu pagamento de forma segura.</p>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <div id="payment-status" class="payment-status"></div>
+            <button type="submit" class="btn-pay">
+              <i class="fa-solid fa-lock"></i>
+              <span>Pagar de Forma Segura</span>
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contacto.html">Contactos</a></li>
+          <li><a href="faq.html">Perguntas Frequentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Siga-nos</h3>
+        <div class="social-links">
+          <a href="https://facebook.com" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com" aria-label="Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://instagram.com" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Contactos</h3>
+        <p><i class="fa-solid fa-envelope"></i> Email: info@flyscape.pt</p>
+        <p><i class="fa-solid fa-phone"></i> Telefone: +351 123 456 789</p>
+        <p><i class="fa-solid fa-map-marker-alt"></i> Morada: Departamento de Economia, Gestão e Engenharia Industrial, Aveiro</p>
+      </div>
+    </div>
+    <hr>
+    <div class="footer-bottom">
+      <p>FlyScape — Your escape starts in the sky <i class="fa-solid fa-plane"></i></p>
+      <p><i class="fa-solid fa-copyright"></i> 2025 FlyScape. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Modal MB WAY -->
+  <div id="mbway-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Pagamento MB WAY</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="mbway-status">
+          <i class="fa-solid fa-mobile-screen"></i>
+          <p>Por favor, confirme o pagamento na aplicação MB WAY</p>
+          <div class="timer">
+            <span id="mbway-timer">05:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/script_checkout.js"></script>
+  <script src="js/script_nomeheader.js"></script>
+  <script src="js/script_contador_carrinho.js"></script>
+</body>
+</html>
